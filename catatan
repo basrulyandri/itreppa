@@ -1,0 +1,10 @@
+* Ketika keuangan akan mendaftarkan atau meregistrasikan aplikan, tampilan modal form untuk pilihan presenter belum secara default ke presenternya
+
+Presenter yang meregistrasikan atau mendaftarkan aplikan yang belum di take tidak secara otomatis menjadikan aplikan tersebut menjadi milik presenter yang meregistrasikan atau mendaftarkan. Namun kegiatan meregistrasikannya di catat dalam tabel aplikan_track. Ketika keuangan meregistrasikan aplikan, beri catatan kepada keuangan siapa yang mendaftarkan aplikan pada modal form registrasikan
+
+Aplikan yang belum pernah di take oleh presenter, lalu didaftarkan oleh Presenter atau keuangan, maka secara otomatis aplikan tersebut di take oleh presenter yang bersangkutan dan dicatat dalam tabel aplikan_track.
+
+Email notifikasi ke user ketika ada aplikan yang baru saja download brosur, harus ada settingan untuk ceklis siapa aja user yang menerima notifikasi
+
+* Setting Header email blm ada
+* Rincian track aplikan belum ada di detail aplikan
