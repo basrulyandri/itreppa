@@ -160,7 +160,17 @@ Route::group(['middleware' => 'app'],function(){
 		Route::get('gallery', [
 			'uses' => 'GalleryController@index',
 			'as' => 'galleries.index',
-		]);				
+		]);
+
+		Route::get('gallery/album/{album}/view', [
+				'uses' => 'GalleryController@albumview',
+				'as' => 'album.view',
+			]);
+
+		Route::post('/gallery/store/album', [
+					'uses' => 'GalleryController@albumstore',
+					'as' => 'album.store',
+				]);	
 		
 		Route::get('settingspt', [
 				'uses' => 'SettingPtController@general',
@@ -377,4 +387,9 @@ Route::group(['middleware' => 'app'],function(){
 		'uses' => 'PostController@ajaxUploadThumbnail',
 		'as' => 'ajax.upload.thumbnail',
 	]);
+
+	Route::post('gallery/ajax/upload', [
+			'uses' => 'GalleryController@ajaxupload',
+			'as' => 'post.ajax.gallery.upload',
+		]);
 });
