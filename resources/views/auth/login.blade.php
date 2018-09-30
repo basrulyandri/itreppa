@@ -1,53 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Rollo Applicant Manager | Login</title>
-
-    <link href="{{url('assets/backend')}}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{url('assets/backend')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="{{url('assets/backend')}}/css/animate.css" rel="stylesheet">
-    <link href="{{url('assets/backend')}}/css/style.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <title>{{getOption('site_name')}} | Login</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="{{url('assets/frontend/login-page')}}/css/style.css">
 </head>
 
-<body class="gray-bg">
-
-    <div class="middle-box text-center loginscreen  animated fadeInDown">
-        <div>
-            <div>
-
-                <h1 class="logo-name" style="font-size: 135px">RAM</h1>
-
-            </div>
-           
-            <form class="m-t" role="form" action="{!!route('auth.dologin')!!}" method="post">
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required="" autofocus>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                </div>
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-
-                <!-- <a href="#"><small>Forgot password?</small></a>
-                <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a> -->
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>SELAMAT DATANG</h2>
+            <form method="POST" class="m-t" role="form" action="{!!route('auth.dologin')!!}" method="post">
+            {{csrf_field()}}
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" />
+                </label>
+                <!-- <p class="forgot-pass">Forgot password?</p> -->
+                <button type="submit" class="submit">Login</button>                
             </form>
-            <!-- <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p> -->
+        </div>
+            <div class="sub-cont">
+                <div class="img">
+                    <div class="img__text m--up">
+                        <h2>New here?</h2>
+                        <p>Sign up and discover great amount of new opportunities!</p>
+                    </div>
+                    <div class="img__text m--in">
+                        <h2>One of us?</h2>
+                        <p>If you already has an account, just sign in. We've missed you!</p>
+                    </div>
+                    <div class="img__btn">
+                        <span class="m--up">Sign Up</span>
+                        <span class="m--in">Sign In</span>
+                    </div>
+                </div>
+            </div>
+        <div class="form sign-up">
+            <h2>Time to feel like home,</h2>
+            <label>
+                <span>Name</span>
+                <input type="text" />
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email" />
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" />
+            </label>
+            <button type="button" class="submit">Sign Up</button>
+            <button type="button" class="fb-btn">Join with <span>facebook</span></button>
         </div>
     </div>
+</div>
 
-    <!-- Mainly scripts -->
-    <script src="{{url('assets/backend')}}/js/jquery-2.1.1.js"></script>
-    <script src="{{url('assets/backend')}}/js/bootstrap.min.js"></script>
-
+<script  src="{{url('assets/frontend/login-page')}}/js/index.js"></script>
 </body>
 
 </html>
+
