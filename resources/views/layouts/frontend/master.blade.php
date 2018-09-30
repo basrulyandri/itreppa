@@ -65,8 +65,11 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                 <!-- BEGIN TOP BAR LEFT PART -->
                 <div class="col-md-6 col-sm-6 additional-shop-info">
                     <ul class="list-unstyled list-inline">
-                        <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-                        <li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
+                        <li><i class="fa fa-phone"></i><span>021 456 78910</span></li>
+                        <li><i class="fa fa-envelope-o"></i><span>info@apperti.id</span></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     </ul>
                 </div>
                 <!-- END TOP BAR LEFT PART -->
@@ -92,149 +95,74 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation pull-right font-transform-inherit">
           <ul>
-            <li class="dropdown active">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Home 
-                
-              </a>
-                
+                Profil                
+              </a>                
               <ul class="dropdown-menu">
-                <li><a href="index.html">Home Default</a></li>
-                <li class="active"><a href="index-header-fix.html">Home with Header Fixed</a></li>
-                <li><a href="index-without-topbar.html">Home without Top Bar</a></li>
+                <li><a href="#">Sambutan Ketua</a></li>
+                <li><a href="#">Struktur Organisasi</a></li>
+                <li class="active"><a href="#">Visi & Misi</a></li>
               </ul>
             </li>
+            
             <li class="dropdown dropdown-megamenu">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Mega Menu
-                
+                Regional                
               </a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="header-navigation-content">
                     <div class="row">
-                      <div class="col-md-4 header-navigation-col">
-                        <h4>Footwear</h4>
+                      <div class="col-md-3 header-navigation-col">
+                        <h4>Sumatra</h4>
                         <ul>
-                          <li><a href="index.html">Astro Trainers</a></li>
-                          <li><a href="index.html">Basketball Shoes</a></li>
-                          <li><a href="index.html">Boots</a></li>
-                          <li><a href="index.html">Canvas Shoes</a></li>
-                          <li><a href="index.html">Football Boots</a></li>
-                          <li><a href="index.html">Golf Shoes</a></li>
-                          <li><a href="index.html">Hi Tops</a></li>
-                          <li><a href="index.html">Indoor Trainers</a></li>
+                          <li><a href="#">Sumatra Barat</a></li> 
+                          <li><a href="#">Jambi</a></li> 
+                          <li><a href="#">Lampung</a></li>                         
                         </ul>
                       </div>
-                      <div class="col-md-4 header-navigation-col">
-                        <h4>Clothing</h4>
+                      <div class="col-md-3 header-navigation-col">
+                        <h4>Jawa</h4>
                         <ul>
-                          <li><a href="index.html">Base Layer</a></li>
-                          <li><a href="index.html">Character</a></li>
-                          <li><a href="index.html">Chinos</a></li>
-                          <li><a href="index.html">Combats</a></li>
-                          <li><a href="index.html">Cricket Clothing</a></li>
-                          <li><a href="index.html">Fleeces</a></li>
-                          <li><a href="index.html">Gilets</a></li>
-                          <li><a href="index.html">Golf Tops</a></li>
+                          <li><a href="#">Jawa Barat</a></li> 
                         </ul>
                       </div>
-                      <div class="col-md-4 header-navigation-col">
-                        <h4>Accessories</h4>
+                      <div class="col-md-3 header-navigation-col">
+                        <h4>Sulawesi</h4>
                         <ul>
-                          <li><a href="index.html">Belts</a></li>
-                          <li><a href="index.html">Caps</a></li>
-                          <li><a href="index.html">Gloves</a></li>
-                        </ul>
-
-                        <h4>Clearance</h4>
+                          <li><a href="#">Sulawesi Barat</a></li> 
+                          <li><a href="#">Gorontalo</a></li> 
+                          <li><a href="#">Sulawesi Selatan</a></li> 
+                        </ul>                        
+                      </div>
+                      <div class="col-md-3 header-navigation-col">
+                        <h4>Kalimantan</h4>
                         <ul>
-                          <li><a href="index.html">Jackets</a></li>
-                          <li><a href="index.html">Bottoms</a></li>
-                        </ul>
+                          <li><a href="#">Selatan</a></li>
+                          <li><a href="#">Timur</a></li>
+                          <li><a href="#">Utara</a></li>
+                        </ul>                        
                       </div>
                     </div>
                   </div>
                 </li>
               </ul>
             </li>
+            <li><a href="#">Agenda Kegiatan</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Pages 
-                
-              </a>
-                
+                Berita               
+              </a>                
               <ul class="dropdown-menu">
-                <li><a href="page-about.html">About Us</a></li>
-                <li><a href="page-services.html">Services</a></li>
-                <li><a href="page-prices.html">Prices</a></li>
-                <li><a href="page-faq.html">FAQ</a></li>
-                <li><a href="page-gallery.html">Gallery</a></li>
-                <li><a href="page-search-result.html">Search Result</a></li>
-                <li><a href="page-404.html">404</a></li>
-                <li><a href="page-500.html">500</a></li>
-                <li><a href="page-login.html">Login Page</a></li>
-                <li><a href="page-forgotton-password.html">Forget Password</a></li>
-                <li><a href="page-reg-page.html">Signup Page</a></li>
-                <li><a href="page-careers.html">Careers</a></li>
-                <li><a href="page-site-map.html">Site Map</a></li>
-                <li><a href="page-contacts.html">Contact</a></li>                
+                <li><a href="#">Regulasi</a></li>
+                <li><a href="#">Umum</a></li>                
               </ul>
             </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Multilevel
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li class="dropdown-submenu">
-                  <a href="index.html">Multi level <i class="fa fa-angle-right"></i></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="index.html">Second Level Link</a></li>
-                    <li><a href="index.html">Second Level Link</a></li>
-                    <li class="dropdown-submenu">
-                      <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Second Level Link 
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a href="index.html">Third Level Link</a></li>
-                        <li><a href="index.html">Third Level Link</a></li>
-                        <li><a href="index.html">Third Level Link</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Portfolio 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="portfolio-4.html">Portfolio 4</a></li>
-                <li><a href="portfolio-3.html">Portfolio 3</a></li>
-                <li><a href="portfolio-2.html">Portfolio 2</a></li>
-                <li><a href="portfolio-item.html">Portfolio Item</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Blog 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">Blog Page</a></li>
-                <li><a href="blog-item.html">Blog Item</a></li>
-              </ul>
-            </li>
+            <li><a href="#">Galeri</a></li> 
+            <li><a href="#">Kontak</a></li> 
             
-            
-            <li><a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes&amp;utm_source=download&amp;utm_medium=banner&amp;utm_campaign=metronic_frontend_freebie" target="_blank">Admin theme</a></li>
 
             <!-- BEGIN TOP SEARCH -->
             <li class="menu-search">
@@ -273,15 +201,14 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <!-- First slide -->
-                    <div class="item active" style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
+                    <div class="item active" style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/slider-apperti.jpg);background-size: cover; background-position: center center;">
                         <div class="container">
-                            <div class="carousel-position-six text-uppercase text-center">
+                            <div class="carousel-position-seven text-uppercase text-center">
                                 <h2 class="margin-bottom-20 animate-delay carousel-title-v5" data-animation="animated fadeInDown">
-                                    Expore the power <br/>
-                                    <span class="carousel-title-normal">of Metronic</span>
+                                    SEMINAR NASIONAL <br/>                                    
                                 </h2>
-                                <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">This is what you were looking for</p>
-                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Purchase Now!</a>
+                                <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">Tantangan PTS di era Digital Dsruption</p>
+                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Selengkapnya!</a>
                             </div>
                         </div>
                     </div>
@@ -289,7 +216,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                     <!-- Second slide -->
                     <div class="item"  style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
                         <div class="container">
-                            <div class="carousel-position-six">
+                            <div class="carousel-position-five">
                                 <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
                                     Need a website design?
                                 </h2>
@@ -344,10 +271,12 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
         <div class="row">
           <!-- BEGIN BOTTOM ABOUT BLOCK -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
+            <h2>Tentang APPERTI</h2>
+            <p>Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.</p>
 
-            <div class="photo-stream">
+            <p>Mengembangkan serta meningkatkan kemampuan anggota agar dapat berperan sebagai agen pembangunan terdepan dalam kegiatan Tridharma Perguruan Tinggi serta mengembangkannya, dan menerapkan ilmu pengetahuan, teknologi, seni dan</p>
+
+            <!-- <div class="photo-stream">
               <h2>Photos Stream</h2>
               <ul class="list-unstyled">
                 <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/people/img5-small.jpg"></a></li>
@@ -366,30 +295,30 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                 <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/people/img2-large.jpg"></a></li>
                 <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/works/img2.jpg"></a></li>
               </ul>                    
-            </div>
+            </div> -->
+
           </div>
           <!-- END BOTTOM ABOUT BLOCK -->
 
           <!-- BEGIN BOTTOM CONTACTS -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2>Our Contacts</h2>
+            <h2>Kontak</h2>
             <address class="margin-bottom-40">
-              35, Lorem Lis Street, Park Ave<br>
-              California, US<br>
-              Phone: 300 323 3456<br>
-              Fax: 300 323 1456<br>
-              Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
-              Skype: <a href="skype:metronic">metronic</a>
+             Menara YARSI Kav. 13 Lt. 1<br>
+              Jl. Letjen. Suprapto, Cempaka Putih Timur<br>
+              Phone: 021 456 78910<br>
+              Fax: 021 456 78910<br>
+              Email: <a href="#">info@apperti.id</a><br>              
             </address>
 
             <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
-              <h2>Newsletter</h2>
-              <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+              <h2>Langganan</h2>
+              <p>Dapatkan berita terbaru APPERTI melalui email</p>
               <form action="#">
                 <div class="input-group">
-                  <input type="text" placeholder="youremail@mail.com" class="form-control">
+                  <input type="text" placeholder="email anda" class="form-control">
                   <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                    <button class="btn btn-primary" type="submit">Langganan</button>
                   </span>
                 </div>
               </form>
@@ -399,8 +328,28 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 
           <!-- BEGIN TWITTER BLOCK --> 
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2 class="margin-bottom-0">Latest Tweets</h2>
-            <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
+            <div class="photo-stream">
+              <h2>Galeri Foto</h2>
+              <ul class="list-unstyled">
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>
+
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
+
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
+                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>                
+              </ul>                    
+            </div>
           </div>
           <!-- END TWITTER BLOCK -->
         </div>
@@ -414,7 +363,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
         <div class="row">
           <!-- BEGIN COPYRIGHT -->
           <div class="col-md-4 col-sm-4 padding-top-10">
-            2015 © Keenthemes. ALL Rights Reserved. <a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a>
+            2018 © APPERTI. ALL Rights Reserved. <a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a>
           </div>
           <!-- END COPYRIGHT -->
           <!-- BEGIN PAYMENTS -->
@@ -434,7 +383,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           <!-- END PAYMENTS -->
           <!-- BEGIN POWERED -->
           <div class="col-md-4 col-sm-4 text-right">
-            <p class="powered">Powered by: <a href="http://www.keenthemes.com/">KeenThemes.com</a></p>
+            <p class="powered">Powered by: <a href="http://www.keenthemes.com/">rolloic.com.com</a></p>
           </div>
           <!-- END POWERED -->
         </div>

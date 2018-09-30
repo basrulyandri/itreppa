@@ -306,6 +306,12 @@
     left: auto;
 }
 
+.carousel-slider .carousel-position-seven {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+}
+
 /* Carousel Animation Delay */
 .carousel-slider .carousel-caption .animate-delay {
     animation-delay: 1s;
