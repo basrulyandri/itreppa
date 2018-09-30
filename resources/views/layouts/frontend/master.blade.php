@@ -18,7 +18,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 <!-- Head BEGIN -->
 <head>
   <meta charset="utf-8">
-  <title>{{getOption('site_name')}} | {{getOption('site_description')}}</title>
+  <title>{{getOption('site_name')}} | @yield('header_title')</title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -77,7 +77,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                 <div class="col-md-6 col-sm-6 additional-nav">
                     <ul class="list-unstyled list-inline pull-right">
                         <li><a href="{{route('auth.login')}}">Log In</a></li>
-                        <li><a href="page-reg-page.html">Registration</a></li>
+                        <li><a href="{{route('page.register')}}">Daftar</a></li>
                     </ul>
                 </div>
                 <!-- END TOP BAR MENU -->
@@ -88,7 +88,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
     <!-- BEGIN HEADER -->
     <div class="header">
       <div class="container">
-        <a class="site-logo" href="index.html"><img src="{{asset('assets/frontend')}}/corporate/img/logos/logo-apperti.png" alt="Metronic FrontEnd"></a>
+        <a class="site-logo" href="{{route('page.index')}}"><img src="{{asset('assets/frontend')}}/corporate/img/logos/logo-apperti.png" alt="{{getOption('site_name')}} | {{getOption('site_description')}}"></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 

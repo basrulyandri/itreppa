@@ -32,6 +32,14 @@ Route::group(['middleware' => 'app'],function(){
 			'uses' => 'PagesController@postdownloadbrosur',
 			'as' => 'post.page.download.brosur',
 		]);
+	Route::get('register', [
+			'uses' => 'PagesController@register',
+			'as' => 'page.register',
+		]);
+	Route::post('register', [
+			'uses' => 'PagesController@postregister',
+			'as' => 'post.page.register',
+		]);
 
 
 

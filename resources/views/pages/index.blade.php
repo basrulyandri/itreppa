@@ -4,20 +4,20 @@
     <meta content="Metronic Shop UI keywords" name="keywords">
     <meta content="Rollo ITC" name="author">
 
-    <meta property="og:site_name" content="APPERTI">
+    <meta property="og:site_name" content="{{getOption('site_name')}}">
     <meta property="og:type" content="website" /> 
-    <meta property="og:title" content="Pascasarjana Institut STIAMI" />
-    <meta property="og:description" content="Institut STIAMI Berpengalaman 14 tahun dalam penyelenggaraan Pascasarjana" />
-    <meta property="og:image" content="{{url('/')}}/assets/frontend/img/PASCA-STIAMI-OG-IMAGE-PROMO-RAMADHAN.jpg" />
-    <meta property="title" content="Pascasarjana Institut STIAMI | Sekolah Tinggi Ilmu Administrasi" />
-    <meta name="description" content="Institut STIAMI Berpengalaman 14 tahun dalam penyelenggaraan Pascasarjana" />
+    <meta property="og:title" content="{{getOption('site_name')}}" />
+    <meta property="og:description" content="{{getOption('site_description')}}" />
+    <meta property="og:image" content="{{asset('/photos/apperti-image.jpg')}}" />
+    <meta property="title" content="{{getOption('site_name')}}" />
+    <meta name="description" content="{{getOption('site_description')}}" />
 @stop
 @section('header')
 <link href="{{asset('assets/frontend')}}/pages/css/slider.css" rel="stylesheet">
 @stop
 
 @section('header_title')
-	Download Brosur
+	{{getOption('site_name')}}
 @stop
 @section('content')
     
