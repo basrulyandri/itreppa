@@ -10,6 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('mail', function(){
+	$user = \App\User::find(90);
+	return (new App\Mail\UserRegistered($user))->render();
+});
 
 Route::group(['middleware' => 'app'],function(){
 
@@ -44,6 +48,8 @@ Route::group(['middleware' => 'app'],function(){
 
 
 	Route::group(['middleware' => 'rbac'],function(){
+		Route::delete('universities/deleteAll', 'UniversityController@deleteAll')->name('universities.deleteAll');
+		Route::resource('universities', 'UniversityController');
 		Route::get('roles',[
 			'uses' => 'RoleController@index',
 			'as' => 'roles.index',

@@ -12,7 +12,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['email','username','password','activated','role_id','first_name','last_name','photo','phone','facebook_url','twitter_url','google_plus_url'];
+    protected $fillable = ['email','username','password','activated','role_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -22,6 +22,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class,'user_id');
+    }
 
     public function role(){
         return $this->belongsTo('\App\Role');

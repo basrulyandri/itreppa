@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Aplikan;
-use App\Post;
 use App\Category;
 use App\Events\FormDownloadBrosurEvent;
+use App\Mail\UserRegistered;
+use App\Post;
+use App\University;
+use App\User;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -90,6 +93,33 @@ class PagesController extends Controller
 
 	public function postregister(Request $request)
 	{
-		dd($request->all());
+		//dd($request->all());
+		$password = str_random(8);
+		$user = User::create([
+			'role_id' => 3,
+			'username' => createUsername($request->first_name),
+			'email' => $request->email,
+			'password' => bcrypt($password),
+			'activated' => 1,			
+		]);
+
+		$university = University::create([
+			'name' => $request->university_name,
+			'rektor_name' => $request->rektor_name,
+			'phone' => $request->university_phone,
+			'website_url' => $request->website,
+			'address' => $request->university_address
+		]);
+		$user->profile()->create([
+			'first_name' => $request->first_name,
+			'last_name' => $request->last_name,
+			'jenis_kelamin' => $request->jenis_kelamin,
+			'phone' => $request->phone,
+			'agama' => $request->agama,
+			'address' => $request->address,
+			'university_id' => $university->id			
+		]);
+		\Mail::to($user->email)->send(new UserRegistered($user));
+		return view('pages.registrationthankyou');
 	}
 }

@@ -93,3 +93,12 @@ function userActivities($user){
 
 	return $followup->sortByDesc('pivot.created_at');	
 }
+
+function createUsername($firstname)
+{
+	   $username = strtolower($firstname);
+       $userRows  = \App\User::whereRaw("username REGEXP '^{$username}(-[0-9]*)?$'")->get();
+       $countUser = count($userRows) + 1;
+
+       return ($countUser > 1) ? "{$username}{$countUser}" : $username;
+}

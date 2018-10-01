@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2018 at 01:31 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Oct 01, 2018 at 07:51 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -8290,6 +8290,31 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `universities`
+--
+
+CREATE TABLE `universities` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `rektor_name` varchar(255) NOT NULL,
+  `phone` varchar(45) NOT NULL,
+  `website_url` varchar(100) NOT NULL,
+  `address` longtext NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `universities`
+--
+
+INSERT INTO `universities` (`id`, `name`, `rektor_name`, `phone`, `website_url`, `address`, `created_at`, `updated_at`) VALUES
+(3, 'STIKES IMC Bintaro', 'Peter simanjuntak', '082347242', 'stikesimcbintaro.com', 'Bintaro', '2018-10-01 16:23:24', '2018-10-01 23:23:24'),
+(5, 'Gala Indonesi', 'sardjono', '09823472', 'fsdfsd.com', 'sawangan', '2018-10-01 16:40:10', '2018-10-01 23:40:10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -8305,26 +8330,19 @@ CREATE TABLE `users` (
   `last_login` timestamp NULL DEFAULT NULL,
   `reset_password_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `api_token` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `about` text COLLATE utf8_unicode_ci,
-  `address` text COLLATE utf8_unicode_ci,
-  `phone` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `facebook_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `twitter_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `google_plus_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL,
-  `photo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `first_name`, `last_name`, `api_token`, `about`, `address`, `phone`, `facebook_url`, `twitter_url`, `google_plus_url`, `created_at`, `updated_at`, `photo`) VALUES
-(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'rPOzFjqkd3dX7eZdZSDl3bz6F58WdZemkbw4hPQL0ExeTXHWXDm8jeyaHDGj', 'Basrul', 'Yandri', '', 'Seseorang yang baru tau kalau ternyata kita gak bisa garuk kuping pake sikut :D', 'Perumahan Maharaja Blok N5-12 Depok', '087878719285', 'https://www.facebook.com/digicrea', 'https://twitter.com/basrul14', 'https://plus.google.com/u/0/103471078199126216243', '2016-11-28 01:29:35', '2018-09-30 18:28:16', '/photos/basrul.jpg');
+INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `api_token`, `created_at`, `updated_at`) VALUES
+(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25'),
+(90, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$P0pGNfE1U/M7gFGXORfFEOOdwiOwWG1Nk6xQIioXKjRdZKs/eP91a', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:23:24', '2018-10-01 23:23:24'),
+(92, 3, 'basrul2', 'yandribisnis@gmail.com', '$2y$10$Syx7JYP9OxWNU5pB1oXHuO/5R8LxjpNI6G1QRfa343xp.CY8mGW3K', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:40:10', '2018-10-01 23:40:10');
 
 --
 -- Triggers `users`
@@ -8333,6 +8351,40 @@ DELIMITER $$
 CREATE TRIGGER `update_user` BEFORE UPDATE ON `users` FOR EACH ROW SET NEW.`updated_at` = NOW()
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_profiles`
+--
+
+CREATE TABLE `user_profiles` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `first_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkedin_url` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `agama` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jenis_kelamin` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `nickname` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `about` text COLLATE utf8mb4_unicode_ci,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `university_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_profiles`
+--
+
+INSERT INTO `user_profiles` (`id`, `user_id`, `first_name`, `last_name`, `facebook_url`, `twitter_url`, `linkedin_url`, `agama`, `jenis_kelamin`, `phone`, `address`, `nickname`, `about`, `photo`, `university_id`, `created_at`, `updated_at`) VALUES
+(1, 90, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '08797979909', 'Depok', NULL, NULL, NULL, 3, '2018-10-01 16:23:24', '2018-10-01 16:23:24'),
+(3, 92, 'Basrul', 'Yandri', NULL, NULL, NULL, 'islam', 'P', '092342', 'Depok', NULL, NULL, NULL, 5, '2018-10-01 16:40:10', '2018-10-01 16:40:10');
 
 -- --------------------------------------------------------
 
@@ -90584,6 +90636,12 @@ ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `universities`
+--
+ALTER TABLE `universities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -90595,6 +90653,12 @@ ALTER TABLE `users`
   ADD KEY `idgroup` (`role_id`),
   ADD KEY `role_id` (`role_id`),
   ADD KEY `role_id_2` (`role_id`);
+
+--
+-- Indexes for table `user_profiles`
+--
+ALTER TABLE `user_profiles`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `villages`
@@ -90629,7 +90693,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category_post`
 --
 ALTER TABLE `category_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -90671,13 +90735,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `permission_role`
 --
 ALTER TABLE `permission_role`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
@@ -90689,7 +90753,7 @@ ALTER TABLE `post_tag`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -90698,10 +90762,22 @@ ALTER TABLE `tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `universities`
+--
+ALTER TABLE `universities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
+--
+-- AUTO_INCREMENT for table `user_profiles`
+--
+ALTER TABLE `user_profiles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
