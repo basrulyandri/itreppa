@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2018 at 07:51 PM
+-- Generation Time: Oct 02, 2018 at 06:34 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -90,6 +90,38 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `anggota`
+--
+
+CREATE TABLE `anggota` (
+  `id` int(10) NOT NULL,
+  `role_id` int(10) NOT NULL,
+  `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `activated` tinyint(1) NOT NULL DEFAULT '0',
+  `activation_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `activated_at` timestamp NULL DEFAULT NULL,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `reset_password_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `api_token` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `api_token`, `created_at`, `updated_at`) VALUES
+(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25'),
+(90, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$P0pGNfE1U/M7gFGXORfFEOOdwiOwWG1Nk6xQIioXKjRdZKs/eP91a', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:23:24', '2018-10-01 23:23:24'),
+(92, 3, 'basrul2', 'yandribisnis@gmail.com', '$2y$10$Syx7JYP9OxWNU5pB1oXHuO/5R8LxjpNI6G1QRfa343xp.CY8mGW3K', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:40:10', '2018-10-01 23:40:10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -110,7 +142,7 @@ INSERT INTO `categories` (`id`, `slug`, `label`, `created_at`, `updated_at`) VAL
 (2, 'info', 'Info', '2018-01-05 07:15:31', '2018-01-05 14:15:31'),
 (3, 'pengumuman', 'Pengumuman', '2018-03-15 18:55:47', '2018-03-16 01:55:47'),
 (4, 'headline', 'Headline', '2018-08-10 14:27:41', '2018-08-10 21:27:41'),
-(5, 'test', 'Test', '2018-08-10 14:29:39', '2018-08-10 21:29:39');
+(6, 'agenda', 'Agenda', '2018-10-02 06:21:31', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -131,8 +163,8 @@ CREATE TABLE `category_post` (
 --
 
 INSERT INTO `category_post` (`id`, `category_id`, `post_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 11, '2017-11-01 16:01:46', NULL),
-(2, 1, 13, '2017-11-01 16:04:57', NULL);
+(4, 6, 2, '2018-10-02 06:21:44', NULL),
+(5, 1, 3, '2018-10-02 14:50:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -7577,7 +7609,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`, `status`, `slug`, `type`, `media_type`, `filename`, `parent`, `thumbnail`, `created_at`, `updated_at`) VALUES
-(1, 85, '2018-07-29 23:53:36', 'lala', '<p>Test</p>', 'test', 'published', 'lala', 'post', NULL, NULL, 0, '/photos/PASCA-STIAMI-OG-IMAGE.jpg', '2018-07-29 16:53:36', '2018-07-29 23:53:36');
+(2, 85, '2018-10-02 13:21:00', 'Seminar Nasional “Tantangan PTS di Era Digital Disruption”', '<p>Pendidikan kian hari makin dihadapkan dengan tantangan yang cukup berat, serta persaingan yang makin ketat.<span id=\"more-2216\"></span>Hal ini berlangsung oleh sebab banyaknya bentuk-bentuk baru dalam soal kebutuhan akan skill pelajar guna mengakselerasi dirinya dengan tantangan atau kebutuhan pasar yang berlangsung. Dan ini mau tidak mau mesti menjadi perhatian bagi lembaga pendidikan guna memberi bekal kemampuan kepada mereka.</p>\r\n<p>Dalam konteks hari ini kita dapat perhatikan bahwa dunia kreatif (industri kreatif) yang terpadu dengan pesatnya penemuan teknologi digital di mana model industri yang demikian ternyata cukup mampu memberi akses yang amat luas serta cepat pada tercapainya perolehan sisi finansial yang cukup tinggi. Tentu saja kenyataan ini membawa situasi baru bagi corak model komunikasi dan interaksi kebudayaan masa sekarang. Fenomena demikian populer saat ini disebut sebagai&nbsp;<em>Era Digital Disruption.&nbsp;</em>Sebuah era dimana media pertemuan manusia adalah layar digital, yang itu berarti hampir seluruh aktivitas yang menghubungkan manusia dengan lainnya dengan seluruh bentuk kepentingannya dimediasi oleh layar digital.</p>\r\n<p>Lembaga pendidikan terutama perguruan tinggi lagi-lagi menjadi lokus perhatian dan sorotan terkait sejauh mana dapat menyediakan kebutuhan skill dalam menopang era di atas. Oleh sebab itu fokus pemikiran mesti dilakukan, yakni berembug bersama menuangkan pemikiran yang lebih terukur bagaimana dapat merumuskan kerangka strategis bagi terselenggaranya proses pendidikan yang berdaya saing.</p>\r\n<p><br />Untuk itu Asosiasi Penyelenggara Perguruan Tinggi (APPERTI) sebuah perkumpulan yang bertujuan Memajukan Pendidikan Tinggi melalui penyelenggara yang profesional, kredibel, akuntabel, transparan menuju Indoensia yang lebih baik. Asosiasi ini hadir guna berkolidasi untuk saling menguatkan dan mendukung untuk seluruh kepentingan penyelenggaraan pendidikan. Sebagai pengantar pada pemikiran yang lebih strategis APPERTI menyelenggarakan Seminar Nasional dengan tema &ldquo;Tantangan PTS di Era Digital Disruption&rdquo; hari Jumat 5 Januari 2018.</p>\r\n<p>Rizal Ramli sebagai keynote Speaker dalam acara ini menuangkan banyak pemikirannya yang lugas dan kritis soal model pembangunan di Indonesia yang menurutnya masih menganut skema pembangunan berhaluan liberal-kapitalis. Di samping itu dia memberi penekanan bahwa pendidikan saat ini mesti diorientasikan pada kemampuan skill dan diharapkan lembaga Pendidikan tinggi untuk tak terlalu birokratis dalam proses pembelajarannya.</p>\r\n<p>Sementara Dino Patti Djalal dalam kapasitasnya sebagai Ketua Asosiasi Dosen seindonesia mengajak hadirin untuk memikirkan aspek-aspek lain sebagai implikasi dari kemajuan dunia digital, terlebih dia juga menyampaikan pengembangan<em>&nbsp;artificial intellegence&nbsp;</em>dengan penemuan robot manusia yang hampir menyerupai kecerdasan dan komunikasi ala manusia<em>.</em>&nbsp;Akan ada kegelisahan eksistensial selain perkembangan teknologi itu sendiri. Sedangkan Prof. Jurnalis Uddin dan Budi Djatimo masing-masing sebagai sebagai ketua Asosiasi ini dan Keta Umum APTISI menegaskan perlunya revolusi pendidikan. Yakni pendidikan yang menekankan kualitas dan negara diharapkan ikut meregulasi bagi hadirnya pendidikan yang berkualitas tersebut. Mereka juga mengelaborasi sejumlah persoalan yang dihadapi anggotanya yang antara lain soal kontestasi penerimaan mahasiswa antara kampus negeri dengan swasta. Selain itu juga soal birokasi administrasi negara yang amat panjang dan melelahkan dan kesulitan finansial yang dialami perguruan tinggi swasta.</p>\r\n<p><img class=\"alignnone wp-image-158\" src=\"http://s2.stiami.ac.id/wp-content/uploads/2018/01/Apperti2.jpg\" alt=\"\" width=\"1200\" height=\"800\" /><br />Dan terakhir Ary Ginanjar yang mengekspresikan kebanggaannya dengan perkumpulan ini karena ada tekad yang kuat untuk saling memajukan tanpa bantuan yang melimpah dari negara, yang menjadikan asosiasi ini benar-benar mandiri. Hal ini baginya sangat penting, karena perubahan terjadi bukan semata karena sarana dan prasarana yang memadai, tapi karena ada gairah yang besar (Passion), obsesi yang kuat, dan tujuan yang mulia untuk merubah dunia menjadi lebih baik. Kemudian akhir dari motivasinya meminta hadirin untuk berdiri dan dengan lantang bersama-sama menyanyikan lagu Kebyar-Kebyar. Dan STIAMI sebagai bagian dari perkumpulan ini juga turut andil berkontribusi bagi kemajuan APPERTI dan Bangsa Indonesia.</p>', 'Pendidikan kian hari makin dihadapkan dengan tantangan yang cukup berat, serta persaingan yang makin ketat.Hal ini berlangsung oleh sebab banyaknya bentuk-bentuk baru dalam soal kebutuhan akan skill pelajar guna mengakselerasi dirinya dengan tantangan atau kebutuhan pasar yang berlangsung.', 'published', 'seminar-nasional-tantangan-pts-di-era-digital-disruption', 'post', NULL, NULL, 0, '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', '2018-10-02 06:21:00', '2018-10-02 21:56:17'),
+(3, 85, '2018-10-02 21:50:32', 'APPERTI Ajak Perguruan Tinggi Siap Hadapi Era Distruption', '<p>Memasuki era digitalisasi yang semakin berkembang,&nbsp; APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan &lsquo;Tantangan Perguruan Tinggi Di Era Digital Distruption&rsquo;. Kegiatan tersebut diadakan di aula kampus Yarsi Jakarta,&nbsp; Jumat&nbsp; (5/1).</p>\r\n<p>Seminar yang dibuka oleh ketua APPERTI Jurnalis Uddin ini menghadirkan Dewan Pengawas APPERTI Marzuki Ali dan&nbsp;<em>keynote speaker</em>&nbsp;Rizal Ramli.</p>\r\n<p>Rizal Ramli menyampaikan pekembangan yang terjadi di Indonesia baik,&nbsp; dari lini pendidikan maupun perekonomian. Menurutnya, perguruan tinggi jangan terlalu birokrasi, jangan terlalu dicekoki dengan informasi tetapi juga harusnya otodidak atau belajar untuk mencari tahu sendiri.</p>\r\n<p>&ldquo;Orang yang hebat adalah orang dapat belajar sendiri secara otodidak dan mencari tahu sendiri. Inilah jawaban bagi perguruan tinggi untuk menghadapi tantangan di era digital&nbsp;<em>distruption</em>,&rdquo; kata Rizal Ramli.</p>\r\n<p>Mantan Ketua DPR yang juga Ketua Dewan Pengawas APPERTI Marzuki Alie, saat memberikan sambutan di awal seminar, berharap dunia pendidikan Indonesia dapat semakin meningkat lagi dengan melakukan sinergi dengan semua pihak.</p>\r\n<p>Sebab, pendidikan dapat mengubah masa depan, mengubah orang bodoh menjadi pintar, serta menghasilkan sumber daya manusia yang kompeten sesuai dengan kebutuhan pasar. Dunia pendidikan dapat berkembang beriringan dengan dunia swasta dan&nbsp; dukungan pemerintah.</p>\r\n<p>Di seminar itu juga dilaksanakan diskusi panel yang menghadirkan narasumber lain, seperti Ketua Umum APPERTI Prof&nbsp; Dr Jurnalis Uddin, PAK;&nbsp; Direktur ESQ 165 Dr Ary Ginanjar Agustian, dan Ketua Umum Asosiasi Dosen Indonesia (ADI) Dr Dino Patti Djalal</p>', 'Memasuki era digitalisasi yang semakin berkembang,  APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan ‘Tantangan Perguruan Tinggi Di Era Digital Distruption’', 'published', 'apperti-ajak-perguruan-tinggi-siap-hadapi-era-distruption', 'post', NULL, NULL, 0, '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', '2018-10-02 14:50:32', '2018-10-02 21:50:32');
 
 --
 -- Triggers `posts`
@@ -7606,27 +7639,8 @@ CREATE TABLE `post_tag` (
 --
 
 INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) VALUES
-(5, 6, 1, '2017-10-13 12:29:07', NULL),
-(6, 6, 5, '2017-10-13 12:29:07', NULL),
-(7, 7, 6, '2017-10-13 13:35:37', NULL),
-(11, 5, 6, '2017-10-13 16:14:11', NULL),
-(14, 2, 6, '2017-10-13 16:19:27', NULL),
-(16, 2, 1, '2017-10-13 16:29:32', NULL),
-(17, 11, 7, '2017-11-01 16:01:46', NULL),
-(18, 13, 7, '2017-11-01 16:04:57', NULL),
-(19, 14, 1, '2018-01-04 15:23:21', NULL),
-(20, 15, 1, '2018-01-04 16:38:51', NULL),
-(21, 16, 1, '2018-01-04 16:40:43', NULL),
-(22, 17, 7, '2018-03-14 16:14:21', NULL),
-(23, 27, 8, '2018-03-20 10:07:07', NULL),
-(24, 27, 9, '2018-03-20 10:07:07', NULL),
-(25, 28, 10, '2018-03-20 10:11:15', NULL),
-(26, 29, 8, '2018-03-20 10:16:19', NULL),
-(27, 29, 11, '2018-03-20 10:16:20', NULL),
-(29, 30, 15, '2018-03-20 12:00:21', NULL),
-(30, 31, 7, '2018-03-20 14:42:16', NULL),
-(31, 1, 7, '2018-07-29 16:53:36', NULL),
-(32, 2, 7, '2018-08-10 10:40:54', NULL);
+(34, 2, 16, '2018-10-02 06:22:28', NULL),
+(35, 3, 17, '2018-10-02 14:50:32', NULL);
 
 --
 -- Triggers `post_tag`
@@ -8267,17 +8281,8 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`id`, `name`, `label`, `created_at`, `updated_at`) VALUES
-(1, 'berita', 'berita', '2017-09-16 13:02:07', '2017-09-16 20:02:07'),
-(6, 'kegiatan', 'Kegiatan', '2017-10-13 13:35:37', '2017-10-13 20:35:37'),
-(7, '', '', '2017-11-01 16:01:46', '2017-11-01 23:01:46'),
-(8, 'seminar', 'seminar', '2018-03-20 10:07:07', '2018-03-20 17:07:07'),
-(9, 'anak', 'anak', '2018-03-20 10:07:07', '2018-03-20 17:07:07'),
-(10, 'training', 'training', '2018-03-20 10:11:15', '2018-03-20 17:11:15'),
-(11, 'kesehatan', 'kesehatan', '2018-03-20 10:16:20', '2018-03-20 17:16:20'),
-(12, 'mahasiswa-baru', 'mahasiswa baru', '2018-03-20 11:58:31', '2018-03-20 18:58:31'),
-(13, 'mahasiswa-baru', 'mahasiswa baru', '2018-03-20 11:59:22', '2018-03-20 18:59:22'),
-(14, 'mahasiswa-baru', 'mahasiswa baru', '2018-03-20 11:59:30', '2018-03-20 18:59:30'),
-(15, 'mahasiswa-baru', 'mahasiswa baru', '2018-03-20 12:00:21', '2018-03-20 19:00:21');
+(16, 'seminar', 'seminar', '2018-10-02 06:22:28', '2018-10-02 13:22:28'),
+(17, '', '', '2018-10-02 14:50:32', '2018-10-02 21:50:32');
 
 --
 -- Triggers `tags`
@@ -8383,7 +8388,7 @@ CREATE TABLE `user_profiles` (
 --
 
 INSERT INTO `user_profiles` (`id`, `user_id`, `first_name`, `last_name`, `facebook_url`, `twitter_url`, `linkedin_url`, `agama`, `jenis_kelamin`, `phone`, `address`, `nickname`, `about`, `photo`, `university_id`, `created_at`, `updated_at`) VALUES
-(1, 90, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '08797979909', 'Depok', NULL, NULL, NULL, 3, '2018-10-01 16:23:24', '2018-10-01 16:23:24'),
+(1, 90, 'Dienna', 'Ahmad', NULL, NULL, NULL, 'Islam', 'L', '08797979909', 'Depok', NULL, NULL, NULL, 5, '2018-10-01 16:23:24', '2018-10-02 16:18:22'),
 (3, 92, 'Basrul', 'Yandri', NULL, NULL, NULL, 'islam', 'P', '092342', 'Depok', NULL, NULL, NULL, 5, '2018-10-01 16:40:10', '2018-10-01 16:40:10');
 
 -- --------------------------------------------------------
@@ -90527,6 +90532,19 @@ ALTER TABLE `album_image`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `anggota`
+--
+ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `users_activation_code_index` (`activation_code`),
+  ADD KEY `users_reset_password_code_index` (`reset_password_code`),
+  ADD KEY `idgroup` (`role_id`),
+  ADD KEY `role_id` (`role_id`),
+  ADD KEY `role_id_2` (`role_id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -90684,16 +90702,22 @@ ALTER TABLE `album_image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `category_post`
 --
 ALTER TABLE `category_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -90741,13 +90765,13 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
 --
 ALTER TABLE `post_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -90759,7 +90783,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `universities`

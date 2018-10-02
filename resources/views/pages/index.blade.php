@@ -56,7 +56,7 @@
             <span>Menjadi anggota APPERTI dan berkontribusi untuk bangsa</span>
           </div>
           <div class="col-md-3 text-right">
-            <a class="btn-transparent" href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin" target="_blank"><i class="fa fa-user margin-right-10"></i>DAFTAR</a>
+            <a class="btn-transparent" href="{{route('page.register')}}"><i class="fa fa-user margin-right-10"></i>DAFTAR</a>
           </div>
         </div>
         <!-- END BLOCKQUOTE BLOCK -->
@@ -69,94 +69,17 @@
           </div>
           <div class="col-md-9">
             <div class="owl-carousel owl-carousel3">
+              @foreach(latestPosts(5,5) as $lp)
               <div class="recent-work-item">
                 <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/seminar.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="assets{{asset('assets/frontend')}}button"><i class="fa fa-search"></i></a>
+                  <img src="{{$lp->thumbnail}}" alt="{{$lp->title}}" class="img-responsive">                  
                 </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <h4>Seminar Nasional : Tantangan PTS di era Digital Disruption</h4>
-                  <b>05 Januari 2018</b>
+                <a class="recent-work-description" href="{{route('page.single',$lp->slug)}}">
+                  <h4>{{$lp->title}}</h4>
+                  <b>{{$lp->created_at->format('d M Y')}}</b>
                 </a>
               </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/pelantikan-sulawesi-barat.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <h4>Pelantikan pengurus APPERTI Sulawesi Barat</h4>
-                  <b>9 Desember 2017.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/pelantikan-lampung.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <h4>Pelantikan pengurus APPERTI Lampung</h4>
-                  <b>12 Desember 2017</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/img5.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/img6.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="assets/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="{{asset('assets/frontend')}}/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="{{asset('assets/frontend')}}/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="javascript:;">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
+              @endforeach              
             </div>       
           </div>
         </div>   
@@ -168,31 +91,27 @@
           <div class="col-md-7 tab-style-1">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab-1" data-toggle="tab">Berita</a></li>
-              <li><a href="#tab-2" data-toggle="tab">Info Pendidikan</a></li>
-              <li><a href="#tab-3" data-toggle="tab">Surat Pembaca</a></li>              
+              <li><a href="#tab-2" data-toggle="tab">Info Pendidikan</a></li>              
             </ul>
             <div class="tab-content">
               <div class="tab-pane row fade in active" id="tab-1">
+                @foreach(latestPosts(1,1) as $berita)
                 <div class="col-md-3 col-sm-3">
-                  <a href="{{asset('assets/frontend')}}/temp/photos/img7.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                    <img class="img-responsive" src="{{asset('assets/frontend')}}/pages/img/apperti.jpg" alt="">
+                  <a href="{{route('page.single',$berita->slug)}}" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                    <img class="img-responsive" src="{{$berita->thumbnail}}" alt="{{$berita->title}}">
                   </a>
                 </div>
                 <div class="col-md-9 col-sm-9">
-                <a href="#"><h4>Apperti Dibentuk Sebagai Wadah Perjuangkan Aspirasi Pendidikan Tinggi</h4></a>
-                  <p class="margin-bottom-10">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
-                  <p><a class="more" href="javascript:;">Selengkapnya <i class="icon-angle-right"></i></a></p>
+                <a href="#"><h4>{{$berita->title}}</h4></a>
+                  <p class="margin-bottom-10">{{$berita->excerpt}}</p>
+                  <p><a class="more" href="{{route('page.single',$berita->slug)}}">Selengkapnya <i class="icon-angle-right"></i></a></p>
                 </div>
+                @endforeach
               </div>
               <div class="tab-pane row fade" id="tab-2">
                 <div class="col-md-9 col-sm-9">
                   <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia..</p>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                  <a href="{{asset('assets/frontend')}}/pages/img/apperti.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                    <img class="img-responsive" src="{{asset('assets/frontend')}}/pages/img/photos/img10.jpg" alt="">
-                  </a>
-                </div>
+                </div>                
               </div>
               <div class="tab-pane fade" id="tab-3">
                 <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>

@@ -14,7 +14,7 @@
                             <li><a href="{{route('auth.logout')}}">Logout</a></li>
                         </ul>
                     </div>
-                    <small>PASCASTIAMI</small>
+                    <small>{{getOption('site_name')}}</small>
                     <div class="logo-element">
                         Rollo
                     </div>
@@ -36,6 +36,9 @@
                 @endif
                   
                 @if(auth()->user()->isAdmin())
+                <li>
+                    <a href="{{route('anggota.index')}}"><i class="fa fa-user"></i> <span class="nav-label">Anggota</span></a>
+                </li>
                 <li>
                     <a href="{{route('posts.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Posts</span></a>
                 </li>

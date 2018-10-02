@@ -66,7 +66,12 @@ function sliders()
 	return \App\Post::whereIn('id',array_flatten(unserialize(getOption('theme_option_slider_contents'))))->get();
 }
 
-function latestPosts($take = 5){
+function latestPosts($take = 5,$category_id = null){
+	if($category_id){
+		if(\App\Category::find($category_id)){
+			return \App\Category::find($category_id)->posts()->whereStatus('published')->whereType('post')->orderBy('created_at','desc')->take($take)->get();
+		}
+	}
 	return \App\Post::whereStatus('published')->whereType('post')->orderBy('created_at','desc')->take($take)->get();
 }
 

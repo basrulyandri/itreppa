@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Aplikan::class,'melayani','user_id','aplikan_id')->withPivot('keterangan')->withTimestamps();   
     }
 
+    public function fullName()
+    {
+        return $this->profile->first_name.' '.$this->profile->last_name;
+    }
+
     public function register()
     {
         return $this->aplikan()->whereAplikanStatusId(4);

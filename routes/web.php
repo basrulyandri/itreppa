@@ -340,6 +340,8 @@ Route::group(['middleware' => 'app'],function(){
 				'uses' => 'SettingController@databaseinstall',
 				'as' => 'setting.database.install',
 			]);
+		Route::delete('anggota/deleteAll', 'AnggotaController@deleteAll')->name('anggota.deleteAll');
+		Route::resource('anggota', 'AnggotaController');
 		
 	});
 
