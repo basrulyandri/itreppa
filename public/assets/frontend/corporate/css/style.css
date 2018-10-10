@@ -521,6 +521,10 @@ body.page-header-fixed {
 	.header-navigation > ul > li:hover > .dropdown-menu {
 	  display: block;
 	}
+
+	.header-navigation > ul > li > ul > li:hover > .dropdown-menu {
+	  display: block;
+	}
 }
 
 .header-navigation,

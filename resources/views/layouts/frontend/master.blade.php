@@ -94,93 +94,32 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation pull-right font-transform-inherit">
-          <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Profil                
-              </a>                
+          <ul class="menu fading">
+          @foreach(\Menu::getByName('Top') as $menu)               
+            <li @if(!empty($menu['child'])) class="dropdown" @endif>
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="@if(!empty($menu['child'])) javascript:; @else {{url('/')}}/{{$menu['link']}} @endif">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->label}}</a>
+              @if(!empty($menu['child']))
               <ul class="dropdown-menu">
-                <li><a href="#">Sambutan Ketua</a></li>
-                <li><a href="#">Struktur Organisasi</a></li>
-                <li class="active"><a href="#">Visi & Misi</a></li>
-              </ul>
+                @foreach($menu['child'] as $child)
+                  <li {{(!empty($child['child'])) ? 'class="dropdown-submenu"' : ''}}>
+                  <a href="{{url('/')}}/{{$child['link']}}">
+                    {{\Harimayco\Menu\Models\MenuItems::find($child['id'])->label}}</a>
+                    @if(!empty($child['child'])) <i class="fa fa-angle-right"></i>@endif
+                  </a>
+                  @if(!empty($child['child']))
+                    <ul class="dropdown-menu">
+                      @foreach($child['child'] as $child2)
+                        <li><a href="{{url('/')}}/{{$child2['link']}}">{{\Harimayco\Menu\Models\MenuItems::find($child2['id'])->label}}</a></a></li>
+                      @endforeach
+                    </ul>                   
+                  @endif
+                  </li>
+                @endforeach
+              </ul> 
+              @endif
             </li>
-            
-            <li class="dropdown dropdown-megamenu">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Regional                
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <div class="header-navigation-content">
-                    <div class="row">
-                      <div class="col-md-3 header-navigation-col">
-                        <h4>Sumatra</h4>
-                        <ul>
-                          <li><a href="#">Sumatra Barat</a></li> 
-                          <li><a href="#">Jambi</a></li> 
-                          <li><a href="#">Lampung</a></li>                         
-                        </ul>
-                      </div>
-                      <div class="col-md-3 header-navigation-col">
-                        <h4>Jawa</h4>
-                        <ul>
-                          <li><a href="#">Jawa Barat</a></li> 
-                        </ul>
-                      </div>
-                      <div class="col-md-3 header-navigation-col">
-                        <h4>Sulawesi</h4>
-                        <ul>
-                          <li><a href="#">Sulawesi Barat</a></li> 
-                          <li><a href="#">Gorontalo</a></li> 
-                          <li><a href="#">Sulawesi Selatan</a></li> 
-                        </ul>                        
-                      </div>
-                      <div class="col-md-3 header-navigation-col">
-                        <h4>Kalimantan</h4>
-                        <ul>
-                          <li><a href="#">Selatan</a></li>
-                          <li><a href="#">Timur</a></li>
-                          <li><a href="#">Utara</a></li>
-                        </ul>                        
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#">Agenda Kegiatan</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Berita               
-              </a>                
-              <ul class="dropdown-menu">
-                <li><a href="#">Regulasi</a></li>
-                <li><a href="#">Umum</a></li>                
-              </ul>
-            </li>
-            <li><a href="#">Galeri</a></li> 
-            <li><a href="#">Kontak</a></li> 
-            
-
-            <!-- BEGIN TOP SEARCH -->
-            <li class="menu-search">
-              <span class="sep"></span>
-              <i class="fa fa-search search-btn"></i>
-              <div class="search-box">
-                <form action="#">
-                  <div class="input-group">
-                    <input type="text" placeholder="Search" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="submit">Search</button>
-                    </span>
-                  </div>
-                </form>
-              </div> 
-            </li>
-            <!-- END TOP SEARCH -->
-          </ul>
+          @endforeach         
+        </ul>
         </div>
         <!-- END NAVIGATION -->
       </div>

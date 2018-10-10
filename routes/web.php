@@ -184,6 +184,10 @@ Route::group(['middleware' => 'app'],function(){
 		Route::post('/gallery/store/album', [
 					'uses' => 'GalleryController@albumstore',
 					'as' => 'album.store',
+				]);
+		Route::post('/gallery/upload', [
+					'uses' => 'GalleryController@upload',
+					'as' => 'post.image.upload',
 				]);	
 		
 		Route::get('settingspt', [

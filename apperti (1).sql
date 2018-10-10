@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2018 at 06:34 PM
+-- Generation Time: Oct 10, 2018 at 06:09 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -44,7 +44,8 @@ CREATE TABLE `albums` (
 INSERT INTO `albums` (`id`, `name`, `description`, `position`, `created_at`, `updated_at`) VALUES
 (1, 'Workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '0000-00-00 00:00:00'),
 (2, 'Baksos', 'Kegiatan sosial di lingkungan sekitar', 1, '2018-07-29 17:32:20', '0000-00-00 00:00:00'),
-(6, 'Seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-07-31 01:40:51');
+(6, 'Seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-07-31 01:40:51'),
+(7, 'TEst', 'test', 0, '2018-10-10 13:48:48', '2018-10-10 20:48:48');
 
 --
 -- Triggers `albums`
@@ -74,10 +75,10 @@ CREATE TABLE `album_image` (
 --
 
 INSERT INTO `album_image` (`id`, `album_id`, `image_id`, `position`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 0, '2018-07-29 17:41:37', NULL),
-(2, 2, 1, 0, '2018-07-29 17:41:37', NULL),
-(3, 1, 2, 0, '2018-07-29 17:41:58', NULL),
-(4, 2, 2, 0, '2018-07-29 17:41:58', NULL);
+(5, 1, 3, 0, '2018-10-10 15:45:43', NULL),
+(6, 1, 4, 0, '2018-10-10 15:45:43', NULL),
+(7, 1, 5, 0, '2018-10-10 15:58:04', NULL),
+(8, 2, 6, 0, '2018-10-10 16:07:42', NULL);
 
 --
 -- Triggers `album_image`
@@ -7290,8 +7291,8 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `filename` varchar(255) NOT NULL,
   `path` varchar(255) DEFAULT NULL,
+  `description` text,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -7300,9 +7301,11 @@ CREATE TABLE `images` (
 -- Dumping data for table `images`
 --
 
-INSERT INTO `images` (`id`, `name`, `filename`, `path`, `created_at`, `updated_at`) VALUES
-(1, 'gambar pertama', 'pertama.jpg', '/public/uploads/pertama.jpg', '2018-07-29 17:35:07', '0000-00-00 00:00:00'),
-(2, 'Gambar Kedua', 'kedua.jpg', '/public/uploads/kedua.jpg', '2018-07-29 17:35:07', '0000-00-00 00:00:00');
+INSERT INTO `images` (`id`, `name`, `path`, `description`, `created_at`, `updated_at`) VALUES
+(3, 'asdas', '/photos/apperti-image.jpg', 'dasda', '2018-10-10 15:45:43', '2018-10-10 22:45:43'),
+(4, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', 'dasdasd', '2018-10-10 15:45:43', '2018-10-10 22:45:43'),
+(5, 'Seminar disrupsi', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'Seminar keren euy', '2018-10-10 15:58:04', '2018-10-10 22:58:04'),
+(6, 'test', '/photos/apperti-image.jpg', 'test', '2018-10-10 16:07:41', '2018-10-10 23:07:41');
 
 --
 -- Triggers `images`
@@ -7371,13 +7374,14 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 18:31:48', '2018-03-15 18:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 18:31:58', '2018-03-15 18:32:02'),
 (12, 'Profil Perguruan Tinggi', 'http://localhost/stikes-imc-l53/public/profil-stikes-imc', 2, 2, '', 1, 1, '2018-03-15 19:07:33', '2018-03-16 16:57:05'),
-(13, 'Visi Misi', 'http://localhost/stikes-imc-l53/public/visi-dan-misi-stikes-imc', 2, 3, '', 1, 1, '2018-03-15 19:08:28', '2018-03-16 16:57:05'),
-(14, 'Struktur Organisasi', 'http://localhost/stikes-imc-l53/public/struk-tur-organisasi-stikes-imc', 2, 4, '', 1, 1, '2018-03-15 19:08:54', '2018-03-16 16:57:05'),
-(15, 'LPPM', 'http://localhost/stikes-imc-l53/public/lppm', 2, 5, '', 1, 1, '2018-03-15 19:09:14', '2018-03-16 16:57:05'),
-(16, 'Prodi', '#', 0, 6, '', 1, 0, '2018-03-16 16:55:32', '2018-03-16 16:57:05'),
-(17, 'PROGRAM D-III KEBIDANAN', 'http://localhost/stikes-imc-l53/public/program-d-iii-kebidanan', 16, 7, '', 1, 1, '2018-03-16 16:56:01', '2018-03-16 16:57:05'),
+(13, 'Visi Misi', 'http://localhost/stikes-imc-l53/public/visi-dan-misi-stikes-imc', 2, 3, '', 1, 1, '2018-03-15 19:08:28', '2018-10-10 13:06:57'),
+(14, 'Struktur Organisasi', 'http://localhost/stikes-imc-l53/public/struk-tur-organisasi-stikes-imc', 2, 5, '', 1, 1, '2018-03-15 19:08:54', '2018-10-10 12:34:43'),
+(15, 'LPPM', 'http://localhost/stikes-imc-l53/public/lppm', 2, 6, '', 1, 1, '2018-03-15 19:09:14', '2018-10-10 12:34:43'),
+(16, 'Prodi', '#', 0, 7, '', 1, 0, '2018-03-16 16:55:32', '2018-10-10 12:34:43'),
+(17, 'PROGRAM D-III KEBIDANAN', 'http://localhost/stikes-imc-l53/public/program-d-iii-kebidanan', 16, 8, '', 1, 1, '2018-03-16 16:56:01', '2018-10-10 12:34:43'),
 (18, 'Home', 'http://localhost/', 0, 1, NULL, 5, 0, '2018-08-10 10:42:21', '2018-08-10 10:42:21'),
-(19, 'Tentang kami', 'http://', 0, 2, NULL, 5, 0, '2018-08-10 10:42:30', '2018-08-10 10:42:30');
+(19, 'Tentang kami', 'http://', 0, 2, NULL, 5, 0, '2018-08-10 10:42:30', '2018-08-10 10:42:30'),
+(20, 'Test level 3', '#', 13, 4, '', 1, 2, '2018-10-10 12:30:11', '2018-10-10 13:06:57');
 
 -- --------------------------------------------------------
 
@@ -90693,13 +90697,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `album_image`
 --
 ALTER TABLE `album_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -90723,7 +90727,7 @@ ALTER TABLE `category_post`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90735,7 +90739,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `migrations`

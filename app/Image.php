@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+	protected $fillable = ['name','path','description'];
     public function albums()
     {
     	return $this->belongsToMany('App\Album');

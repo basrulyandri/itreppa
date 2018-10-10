@@ -31,4 +31,27 @@ class GalleryController extends Controller
 	{
 		return view('galleries.view',compact(['album']));
 	}
+
+	public function upload(Request $request)
+	{	
+		$images = []	;
+		//dd($request->all());
+		foreach($request->name as $key => $name){
+			$images[$key]['name'] = $name;			
+		}
+
+		foreach($request->description as $key => $description){
+			$images[$key]['description'] = $description;			
+		}
+
+		foreach($request->path as $key => $path){
+			$images[$key]['path'] = $path;			
+		}
+
+		$album = Album::find($request->album_id);
+		foreach($images as $image){
+			$album->images()->create($image);			
+		}
+		return redirect()->back()->with('success','Images has been uploaded to current album');
+	}
 }

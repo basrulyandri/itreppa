@@ -13,7 +13,7 @@
         <h2>Galleries</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('galleries.index')}}">Galleries</a>
+                <a href="{{route('galleries.index')}}">Album</a>
             </li>                
         </ol>
     </div>
