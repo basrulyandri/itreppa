@@ -95,9 +95,10 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation pull-right font-transform-inherit">
           <ul class="menu fading">
-          @foreach(\Menu::getByName('Top') as $menu)               
+          <li><a href="{{route('page.index')}}">Home</a></li>             
+          @foreach(\Menu::getByName('Top') as $menu)
             <li @if(!empty($menu['child'])) class="dropdown" @endif>
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="@if(!empty($menu['child'])) javascript:; @else {{url('/')}}/{{$menu['link']}} @endif">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->label}}</a>
+              <a @if(!empty($menu['child']))class="dropdown-toggle" data-toggle="dropdown"@endif href="@if(!empty($menu['child']))javascript:;@else{{url('/')}}/{{$menu['link']}}@endif">{{\Harimayco\Menu\Models\MenuItems::find($menu['id'])->label}}</a>
               @if(!empty($menu['child']))
               <ul class="dropdown-menu">
                 @foreach($menu['child'] as $child)
@@ -250,18 +251,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
               Email: <a href="#">info@apperti.id</a><br>              
             </address>
 
-            <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
-              <h2>Langganan</h2>
-              <p>Dapatkan berita terbaru APPERTI melalui email</p>
-              <form action="#">
-                <div class="input-group">
-                  <input type="text" placeholder="email anda" class="form-control">
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">Langganan</button>
-                  </span>
-                </div>
-              </form>
-            </div>
+            
           </div>
           <!-- END BOTTOM CONTACTS -->
 
@@ -270,23 +260,9 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
             <div class="photo-stream">
               <h2>Galeri Foto</h2>
               <ul class="list-unstyled">
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>
-
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
-
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/3.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/4.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/2.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
-                <li><a href="javascript:;"><img alt="" src="{{asset('assets/frontend')}}/pages/img/5.jpg"></a></li>                
+                @foreach(\App\Image::inRandomOrder()->take(15)->get() as $footerimage)
+                  <li><a href="{{route('page.album.single',$footerimage->albums()->first()->slug)}}"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
+                @endforeach                
               </ul>                    
             </div>
           </div>
@@ -356,6 +332,8 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
             Layout.initNavScrolling();
         });
     </script>
+
+    @yield('footer')
     <!-- END PAGE LEVEL JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

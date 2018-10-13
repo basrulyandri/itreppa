@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Album;
+use App\Image;
+use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
@@ -53,5 +54,12 @@ class GalleryController extends Controller
 			$album->images()->create($image);			
 		}
 		return redirect()->back()->with('success','Images has been uploaded to current album');
+	}
+
+	public function imagedetach(Request $request, Album $album)
+	{
+		$album->images()->detach($request->image_id);
+		Image::find($request->image_id)->delete();
+		return redirect()->back()->with('success','Gambar berhasil di hapus dari album');
 	}
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use App\Aplikan;
 use App\Category;
 use App\Events\FormDownloadBrosurEvent;
@@ -121,5 +122,17 @@ class PagesController extends Controller
 		]);
 		\Mail::to($user->email)->send(new UserRegistered($user));
 		return view('pages.registrationthankyou');
+	}
+
+	public function galleries()
+	{
+		$albums = Album::paginate(10);
+		return view('pages.galleries',compact(['albums']));
+	}
+
+	public function albumsingle($slug)
+	{
+		$album = Album::whereSlug($slug)->first();
+		return view('pages.albumsingle',compact(['album']));
 	}
 }

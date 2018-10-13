@@ -173,7 +173,7 @@ Route::group(['middleware' => 'app'],function(){
 
 		Route::get('gallery', [
 			'uses' => 'GalleryController@index',
-			'as' => 'galleries.index',
+			'as' => 'gallery.index',
 		]);
 
 		Route::get('gallery/album/{album}/view', [
@@ -181,6 +181,10 @@ Route::group(['middleware' => 'app'],function(){
 				'as' => 'album.view',
 			]);
 
+		Route::get('gallery/album/{album}/detach', [
+				'uses' => 'GalleryController@imagedetach',
+				'as' => 'gallery.album.image.detach',
+			]);
 		Route::post('/gallery/store/album', [
 					'uses' => 'GalleryController@albumstore',
 					'as' => 'album.store',
@@ -221,10 +225,7 @@ Route::group(['middleware' => 'app'],function(){
 				'as' => 'post.settings.kampus.update',
 			]);
 		
-		Route::get('reports', [
-				'uses' => 'ReportController@index',
-				'as' => 'report.index',
-			]);
+		
 		Route::get('posts',[
 			'uses' => 'PostController@index',
 			'as' => 'posts.index',
@@ -316,34 +317,7 @@ Route::group(['middleware' => 'app'],function(){
 				'uses' => 'SettingController@general',
 				'as' => 'setting.general',
 			]);
-		Route::get('setting/aplikan', [
-				'uses' => 'SettingController@aplikan',
-				'as' => 'setting.aplikan',
-			]);
-
-		Route::get('setting/akademik', [
-				'uses' => 'SettingController@akademik',
-				'as' => 'setting.akademik',
-			]);
-		Route::get('setting/mailing', [
-				'uses' => 'SettingController@mailing',
-				'as' => 'setting.mailing',
-			]);
-
-		Route::get('setting/database', [
-				'uses' => 'SettingController@database',
-				'as' => 'setting.database',
-			]);
-
-		Route::get('setting/database/reset', [
-				'uses' => 'SettingController@databasereset',
-				'as' => 'setting.database.reset',
-			]);
-
-		Route::post('setting/database/install', [
-				'uses' => 'SettingController@databaseinstall',
-				'as' => 'setting.database.install',
-			]);
+		
 		Route::delete('anggota/deleteAll', 'AnggotaController@deleteAll')->name('anggota.deleteAll');
 		Route::resource('anggota', 'AnggotaController');
 		
@@ -378,6 +352,16 @@ Route::group(['middleware' => 'app'],function(){
 	Route::get('downloadfileexcelimportaplikan', [
 			'uses' => 'AplikanController@downloadfileexcelimportaplikan',
 			'as' => 'download.contoh.file.import.aplikan',
+		]);
+
+	Route::get('galleries', [
+			'uses' => 'PagesController@galleries',
+			'as' => 'galleries.index',
+		]);
+
+	Route::get('album/{slug}', [
+			'uses' => 'PagesController@albumsingle',
+			'as' => 'page.album.single',
 		]);
 
 	Route::get('/{slug}', [

@@ -10,23 +10,36 @@
 
 <div class="main">
 	<div class="container">
-		<div class="row">
-					<div class="span8">
-						<!-- Content -->
-						<div class="content">
-							<div class="page-header">
-								<h1>{{$post->title}}</h1>
-							</div>
-							<!-- Single Page -->
-								<div class="page">
-									
-									{!!$post->body!!}
-								</div>
-								<!-- End Single Page -->
-						</div>
-						<!-- End Content -->
-					</div>
+		<div class="row margin-bottom-40">
+			<div class="col-md-12 col-sm-12">
+            <div class="content-page">
+              <div class="row">
+                <!-- BEGIN LEFT SIDEBAR -->            
+                <div class="col-md-9 col-sm-9 blog-item">
+            		<h1>{{$post->title}}</h1>
+                  <ul class="blog-info">
+                    <li><i class="fa fa-user"></i>oleh {{$post->user->username}}</li>
+                    <li><i class="fa fa-calendar"></i> {{$post->published_at->format('d M Y')}}</li>
+                  </ul>                  
+                  <div class="blog-item-img">
+                   <img src="{{$post->thumbnail}}" alt="">        
+                  </div>
+                  
+                  {!!$post->body!!}
+                </div>                                                      
+                <!-- END LEFT SIDEBAR -->
+
+                <!-- BEGIN RIGHT SIDEBAR -->            
+                <div class="col-md-3 col-sm-3 blog-sidebar">
+                  
 					@include('layouts.frontend.sidebar')
+                </div>
+                <!-- END RIGHT SIDEBAR -->            
+              </div>
+            </div>
+          </div>
+
+				
 				</div>
 	</div>
 </div>

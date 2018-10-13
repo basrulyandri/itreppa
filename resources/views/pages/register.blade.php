@@ -1,7 +1,5 @@
 @extends('layouts.frontend.master')
 @section('og')
-    <meta content="Metronic Shop UI description" name="description">
-    <meta content="Metronic Shop UI keywords" name="keywords">
     <meta content="Rollo ITC" name="author">
 
     <meta property="og:site_name" content="{{getOption('site_name')}}">

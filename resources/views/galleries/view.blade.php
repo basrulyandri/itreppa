@@ -13,7 +13,7 @@
         <h2>Album {{$album->name}}</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('galleries.index')}}">Album</a>
+                <a href="{{route('gallery.index')}}">Album</a>
             </li>                
         </ol>
     </div>
@@ -80,7 +80,12 @@
                         <div class="card mb-4 shadow-sm">
                             <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="{{$image->path}}">
                             <div class="card-body">
-                              <p class="card-text">{{$image->description}}</p>                         
+                              <p class="card-text">{{$image->description}}</p> 
+                              <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">                                  
+                                  <button class="btn btn-sm btn-danger deleteImage" image-id="{{$image->id}}" album-id="{{$album->id}}"><i class="fa fa-trash"></i></button>
+                                </div>                                
+                              </div>                        
                             </div>
                           </div>
                     </div>
@@ -121,6 +126,23 @@
             var thum = strRandom(15);
             var html = '<div class="row form-inline"><div class="form-group"><label for="name" class="sr-only">Name</label><input class="form-control" placeholder="Name" required="true" name="name[]" type="text"></div><div class="form-group"><label for="description" class="sr-only">Name</label><input class="form-control" placeholder="Description" name="description[]" type="text"></div><div class="form-group"><div class="input-group"><span class="input-group-btn"><a id="uploadbutton" data-input="'+thum+'" data-preview="'+str+'" class="uploadbutton btn btn-primary"><i class="fa fa-picture-o"></i> Choose</a></span><input id="'+thum+'" class="form-control" type="text" name="path[]"></div></div><div class="form-group"><img src="/assets/backend/img/no-thumbnail.jpg" id="'+str+'" style="width:60px;"></div><hr></div>';
             $('#formListImages').append(html);
+        });
+        $('.deleteImage').click(function(){          
+           var image_id = $(this).attr('image-id');
+           var album_id = $(this).attr('album-id');
+            swal({
+              title:'SURE ?',
+               text: "Want to delete this permission ?",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#DD6B55",
+               confirmButtonText: "Yes, delete it!",
+               closeOnConfirm: true,
+            },function(isConfirm){
+              if (isConfirm) {
+                window.location = "/gallery/album/"+album_id+"/detach?image_id="+image_id;
+              }
+            });
         });
     });
   </script>

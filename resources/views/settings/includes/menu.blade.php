@@ -1,11 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 	    <div id="nestable-menu">
-	        <a href="{{route('setting.general')}}" class="btn btn-white btn-sm">General</a>	        
-	        <a href="{{route('setting.aplikan')}}" class="btn btn-white btn-sm">Aplikan</a>	        
-	        <a href="{{route('setting.akademik')}}" class="btn btn-white btn-sm">Akademik</a>	        
-	        <a href="{{route('setting.mailing')}}" class="btn btn-white btn-sm">Mailing</a>	
-	        <a href="{{route('setting.database')}}" class="btn btn-white btn-sm">Database</a>	        
+	        <a href="{{route('setting.general')}}" class="btn btn-white btn-sm">General</a>	        	        
 	    </div>	    
     </div>
 </div>

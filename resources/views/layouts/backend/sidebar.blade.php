@@ -47,7 +47,7 @@
                     <a href="{{route('static.pages.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Pages</span></a>
                 </li>
                 <li>
-                    <a href="{{route('galleries.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Gallery</span></a>
+                    <a href="{{route('gallery.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Gallery</span></a>
                 </li>
                 
                 <li>
@@ -61,11 +61,8 @@
                 <li>
                     <a href="{{route('menus.index')}}"><i class="fa fa-wrench"></i><span class="nav-label"> Menus</span></a>
                 </li>
-                @endif
+                @endif                
                 
-                <li>
-                    <a href="{{route('report.index')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reports</span></a>
-                </li>
 
                 <li>
                     <a target="_blank" href="{{route('page.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Visit Site</span></a>
