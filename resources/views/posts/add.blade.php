@@ -104,9 +104,7 @@
                          </div>
                          <img src="{{url('assets/backend')}}/img/no-thumbnail.jpg" id="holder" style="margin-top:15px;width:100%">  
 
-                        <div class="alert alert-warning">                                            
-                            Untuk Slider thumbnail harus berukuran 1170 x 400 px
-                        </div>                      
+                                              
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Publish">

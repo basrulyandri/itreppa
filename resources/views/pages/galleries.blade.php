@@ -6,6 +6,9 @@
     <meta property="og:image" content="" />
     <meta name="description" content="" />
 @stop
+@section('header_title')
+  Galeri foto
+@stop
 @section('content')
 
 <div class="main">
@@ -19,8 +22,8 @@
               	@foreach($albums as $album)
               	@if(!$album->images->isEmpty())
                 <div class="col-md-3 col-sm-4 gallery-item">
-                  <a href="{{route('page.album.single',$album->slug)}}" title="Project Name" href="assets/pages/img/works/img1.jpg" class="fancybox-button">
-                    <img alt="" src="{{$album->thumbnail()}}" class="img-responsive" alt="{{$album->name}}">
+                  <a href="{{route('page.album.single',$album->slug)}}" title="Project Name">
+                    <img alt="" src="{{$album->thumbnail()}}" class="img-responsive" alt="{{$album->name}}" >
                     <h3>{{$album->name}}</h3>                    
                   </a> 
                 </div>                     

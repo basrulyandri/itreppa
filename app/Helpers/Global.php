@@ -3,11 +3,16 @@
 function getOption($key,$serialize = false){
 	$option = \App\Option::whereOptionKey($key)->first();
 
-	if($serialize){
-		return unserialize($option->option_value);
+	if($option){
+		if($serialize){
+			return unserialize($option->option_value);
+		}
+
+		return $option->option_value;		
 	}
 
-	return $option->option_value;
+	return;
+
 }
 
 function getPtOption($key,$unserialize = false){

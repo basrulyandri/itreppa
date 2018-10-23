@@ -65,11 +65,12 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
                 <!-- BEGIN TOP BAR LEFT PART -->
                 <div class="col-md-6 col-sm-6 additional-shop-info">
                     <ul class="list-unstyled list-inline">
-                        <li><i class="fa fa-phone"></i><span>021 456 78910</span></li>
-                        <li><i class="fa fa-envelope-o"></i><span>info@apperti.id</span></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><i class="fa fa-phone"></i><span>{{getOption('theme_option_hotline')}}</span></li>
+                        <li><i class="fa fa-envelope-o"></i><span>{{getOption('theme_option_email')}}</span></li>
+                        <li><a href="{{getOption('theme_option_facebook_url')}}"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{getOption('theme_option_instagram_url')}}"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="{{getOption('theme_option_twitter_url')}}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{getOption('theme_option_youtube_url')}}"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
                 <!-- END TOP BAR LEFT PART -->
@@ -88,7 +89,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
     <!-- BEGIN HEADER -->
     <div class="header">
       <div class="container">
-        <a class="site-logo" href="{{route('page.index')}}"><img src="{{asset('assets/frontend')}}/corporate/img/logos/logo-apperti.png" alt="{{getOption('site_name')}} | {{getOption('site_description')}}"></a>
+        <a class="site-logo" href="{{route('page.index')}}"><img src="{{getOption('theme_option_logo')}}" alt="{{getOption('site_name')}} | {{getOption('site_description')}}"></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
@@ -128,79 +129,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
     <!-- Header END -->
 
     @if(\Request::route()->getName() == 'page.index')
-        <!-- BEGIN SLIDER -->
-        <div class="page-slider margin-bottom-40">
-            <div id="carousel-example-generic" class="carousel slide carousel-slider">
-                <!-- Indicators -->
-                <ol class="carousel-indicators carousel-indicators-frontend">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <!-- First slide -->
-                    <div class="item active" style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/slider-apperti.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-seven text-uppercase text-center">
-                                <h2 class="margin-bottom-20 animate-delay carousel-title-v5" data-animation="animated fadeInDown">
-                                    SEMINAR NASIONAL <br/>                                    
-                                </h2>
-                                <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">Tantangan PTS di era Digital Dsruption</p>
-                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Selengkapnya!</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Second slide -->
-                    <div class="item"  style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-five">
-                                <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Need a website design?
-                                </h2>
-                                <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    This is what you were looking for
-                                </p>
-                                <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                                    Sed est nunc, sagittis at consectetur id.
-                                </p>
-                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Purchase Now!</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Third slide -->
-                    <div class="item"  style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-six">
-                                <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Powerful &amp; Clean
-                                </h2>
-                                <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Responsive Website &amp; Admin Theme
-                                </p>
-                                <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                                    Sed est nunc, sagittis at consectetur id.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control carousel-control-shop carousel-control-frontend" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                </a>
-                <a class="right carousel-control carousel-control-shop carousel-control-frontend" href="#carousel-example-generic" role="button" data-slide="next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-        <!-- END SLIDER -->
+        @include('layouts.frontend._slider')
     @endif
 
     @yield('content')
@@ -212,9 +141,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           <!-- BEGIN BOTTOM ABOUT BLOCK -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
             <h2>Tentang APPERTI</h2>
-            <p>Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.</p>
-
-            <p>Mengembangkan serta meningkatkan kemampuan anggota agar dapat berperan sebagai agen pembangunan terdepan dalam kegiatan Tridharma Perguruan Tinggi serta mengembangkannya, dan menerapkan ilmu pengetahuan, teknologi, seni dan</p>
+            <p style="text-align: justify;">{{getOption('theme_option_about')}}</p>
 
             <!-- <div class="photo-stream">
               <h2>Photos Stream</h2>
@@ -244,11 +171,9 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           <div class="col-md-4 col-sm-6 pre-footer-col">
             <h2>Kontak</h2>
             <address class="margin-bottom-40">
-             Menara YARSI Kav. 13 Lt. 1<br>
-              Jl. Letjen. Suprapto, Cempaka Putih Timur<br>
-              Phone: 021 456 78910<br>
-              Fax: 021 456 78910<br>
-              Email: <a href="#">info@apperti.id</a><br>              
+             {{getOption('theme_option_address')}}<br>
+              Telpon: {{getOption('theme_option_hotline')}}<br>              
+              Email: <a href="mailto:{{getOption('theme_option_email')}}">{{getOption('theme_option_email')}}</a><br>              
             </address>
 
             
@@ -261,7 +186,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
               <h2>Galeri Foto</h2>
               <ul class="list-unstyled">
                 @foreach(\App\Image::inRandomOrder()->take(15)->get() as $footerimage)
-                  <li><a href="{{route('page.album.single',$footerimage->albums()->first()->slug)}}"><img alt="" src="{{asset('assets/frontend')}}/pages/img/1.jpg"></a></li>
+                  <li><a href="{{route('page.album.single',$footerimage->albums()->first()->slug)}}"><img alt="" src="{{$footerimage->path}}"></a></li>
                 @endforeach                
               </ul>                    
             </div>
@@ -278,21 +203,16 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
         <div class="row">
           <!-- BEGIN COPYRIGHT -->
           <div class="col-md-4 col-sm-4 padding-top-10">
-            2018 © APPERTI. ALL Rights Reserved. <a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a>
+            2018 © {{config('app.name')}}. ALL Rights Reserved
           </div>
           <!-- END COPYRIGHT -->
           <!-- BEGIN PAYMENTS -->
           <div class="col-md-4 col-sm-4">
             <ul class="social-footer list-unstyled list-inline pull-right">
-              <li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-dribbble"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-skype"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-github"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="javascript:;"><i class="fa fa-dropbox"></i></a></li>
+             <li><a href="{{getOption('theme_option_facebook_url')}}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{getOption('theme_option_instagram_url')}}"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="{{getOption('theme_option_twitter_url')}}"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="{{getOption('theme_option_youtube_url')}}"><i class="fa fa-youtube"></i></a></li>
             </ul>  
           </div>
           <!-- END PAYMENTS -->

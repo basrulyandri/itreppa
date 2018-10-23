@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="addForm" class="btn btn-block btn-sm btn-info"><i class="fa fa-plus"></i> Add form</button>
+                        <button id="addForm" class="btn btn-block btn-sm btn-info"><i class="fa fa-plus"></i> Add form image</button>
                     </div>
                     <div class="row">
                         <input type="submit" class="btn btn-primary pull-right" value="Submit">                        

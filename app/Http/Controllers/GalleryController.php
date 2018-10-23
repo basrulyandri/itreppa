@@ -62,4 +62,21 @@ class GalleryController extends Controller
 		Image::find($request->image_id)->delete();
 		return redirect()->back()->with('success','Gambar berhasil di hapus dari album');
 	}
+
+	public function edit(Album $album)
+	{
+		return view('galleries.edit',compact(['album']));
+	}
+
+	public function update(Request $request, Album $album)
+	{
+		$album->update($request->except(['_token']));
+		return redirect()->route('gallery.index')->with('success','Album has been updated successfully');
+	}
+
+	public function delete(Album $album)
+	{
+		$album->delete();
+		return redirect()->route('gallery.index')->with('success','Album has been deleted successfully');
+	}
 }

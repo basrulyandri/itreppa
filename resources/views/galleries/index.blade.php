@@ -39,18 +39,27 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @php 
+                        $no = 1;
+                    @endphp
                     @foreach($albums as $album)
-                        <tr>
-                            <td>{{$album->id}}</td>
+                        <tr>   
+                            <td>{{$no}}</td>                         
                             <td><a href="{{route('album.view',$album)}}"><strong class="text-navy">{{$album->name}}</strong></a><br/>
                             <small>{{$album->description}}</small></td>
                             <td>
                                 @foreach($album->images()->limit(5)->get() as $image)
-                                    <a href="#"><img alt="image" class="img-circle" src="https://placeimg.com/60/60/people" style="width: 32px; height: 32px;"></a>
+                                    <a href="#"><img alt="image" class="img-rounded" src="{{$image->path}}" style="width: 32px; height: 32px;"></a>
                                 @endforeach
                             </td>
-                            <td></td>
-                        </tr> 
+                            <td>
+                                <a href="{{route('gallery.edit',$album)}}" class="btn btn-xs btn-warning" title="Edit"><i class="fa fa-pencil"></i></a>
+                                <button album-id="{{$album->id}}" class="btn btn-xs btn-danger" title="Hapus"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        @php 
+                            $no++;
+                        @endphp 
                     @endforeach                                             
                     </tbody>
                 </table>
@@ -102,6 +111,24 @@
                 responsive: true,
                 "dom": 'T<"clear">lfrtip',                
             });
+
+            $('body').on('click','.btn-danger',function(){
+                //alert('test');
+                var id = $(this).attr('album-id');
+                swal({
+                  title:'SURE ?',
+                   text: "Want to delete this Album ?",
+                   type: "warning",
+                   showCancelButton: true,
+                   confirmButtonColor: "#DD6B55",
+                   confirmButtonText: "Yes, delete it!",
+                   closeOnConfirm: true,
+                },function(isConfirm){
+                  if (isConfirm) {
+                    window.location = "gallery/album/"+id+"/delete";
+                  }
+                });
+              });  
     });
 </script>
 @stop

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2018 at 07:11 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.1.19
+-- Generation Time: Oct 23, 2018 at 10:54 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,10 +43,9 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id`, `name`, `slug`, `description`, `position`, `created_at`, `updated_at`) VALUES
-(1, 'Workshop', 'workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '2018-10-13 23:49:07'),
+(1, 'Workshop', 'workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '2018-10-24 01:01:54'),
 (2, 'Baksos', 'baksos', 'Kegiatan sosial di lingkungan sekitar', 1, '2018-07-29 17:32:20', '2018-10-13 23:49:10'),
 (6, 'Seminar', 'seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-10-13 23:49:17'),
-(7, 'TEst', 'test', 'test', 0, '2018-10-10 13:48:48', '2018-10-13 23:49:20'),
 (8, 'Dies natalis', 'dies-natalis', '', 0, '2018-10-13 16:50:25', '2018-10-13 23:50:25');
 
 --
@@ -77,7 +76,10 @@ CREATE TABLE `album_image` (
 --
 
 INSERT INTO `album_image` (`id`, `album_id`, `image_id`, `position`, `created_at`, `updated_at`) VALUES
-(11, 1, 9, 0, '2018-10-13 16:45:59', NULL);
+(11, 1, 9, 0, '2018-10-13 16:45:59', NULL),
+(12, 8, 10, 0, '2018-10-23 18:18:58', NULL),
+(14, 8, 12, 0, '2018-10-23 18:19:44', NULL),
+(15, 6, 13, 0, '2018-10-23 18:41:28', NULL);
 
 --
 -- Triggers `album_image`
@@ -7301,7 +7303,10 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `name`, `path`, `description`, `created_at`, `updated_at`) VALUES
-(9, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'dasdasd', '2018-10-13 16:45:59', '2018-10-13 23:45:59');
+(9, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'dasdasd', '2018-10-13 16:45:59', '2018-10-13 23:45:59'),
+(10, 'sdfsdf', '/photos/apperti-image.jpg', 'sdfsdf', '2018-10-23 18:18:58', '2018-10-24 01:18:58'),
+(12, ';lasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', ';ldskfsdf', '2018-10-23 18:19:44', '2018-10-24 01:19:44'),
+(13, 'kajksdapo', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', 'oisdfs', '2018-10-23 18:41:28', '2018-10-24 01:41:28');
 
 --
 -- Triggers `images`
@@ -7419,23 +7424,32 @@ CREATE TABLE `options` (
 
 INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `updated_at`) VALUES
 (7, 'theme_option_amount_of_slider', '3', '2017-11-01 15:00:42', '2018-03-17 01:36:18'),
-(8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"18\";i:1;s:2:\"20\";i:2;s:2:\"24\";}', '2017-11-01 15:35:29', '2018-03-17 01:36:18'),
-(9, 'theme_option_logo', '/photos/logo-header-email.png', '2018-01-04 16:44:46', '2018-10-14 00:41:38'),
-(10, 'theme_option_hotline', '0811 1078877', '2018-01-04 17:04:14', '2018-10-14 00:41:38'),
-(11, 'theme_option_facebook_url', 'https://www.facebook.com/S2.InstitutStiami/', '2018-01-04 17:11:01', '2018-10-14 00:41:38'),
-(12, 'theme_option_twitter_url', '#', '2018-01-04 17:13:25', '2018-10-14 00:41:38'),
-(13, 'theme_option_instagram_url', '#', '2018-01-04 17:13:25', '2018-10-14 00:41:38'),
-(14, 'theme_option_youtube_url', '#', '2018-01-04 17:13:36', '2018-10-14 00:41:38'),
+(9, 'theme_option_logo', '/photos/logo-apperti.png', '2018-01-04 16:44:46', '2018-10-24 02:25:30'),
+(10, 'theme_option_hotline', '021 456 78910', '2018-01-04 17:04:14', '2018-10-24 02:25:30'),
+(11, 'theme_option_facebook_url', '#', '2018-01-04 17:11:01', '2018-10-24 02:25:30'),
+(12, 'theme_option_twitter_url', '#', '2018-01-04 17:13:25', '2018-10-24 02:25:30'),
+(13, 'theme_option_instagram_url', '#', '2018-01-04 17:13:25', '2018-10-24 02:25:30'),
+(14, 'theme_option_youtube_url', '#', '2018-01-04 17:13:36', '2018-10-24 02:25:30'),
 (15, 'email_from', 'pascasarjana@stiami.ac.id', '2018-02-24 16:54:03', '2018-05-25 23:25:27'),
 (16, 'email_from_label', 'Pascasarjana Institut STIAMI', '2018-02-24 16:55:33', '2018-05-25 23:25:27'),
 (22, 'file_brosur', '/files/brosur pascasarjana STIAMI 2018.pdf', '2018-02-25 14:09:41', '2018-05-25 23:25:27'),
-(23, 'theme_option_sambutan_title', 'Sambutan Ketua', '2018-03-15 17:47:45', '2018-05-25 03:56:51'),
-(24, 'theme_option_sambutan_image', '/photos/taufan.jpg', '2018-03-15 17:48:11', '2018-05-25 03:56:51'),
-(25, 'theme_option_sambutan_content', 'Perwujudan misi ini perlu sejalan Kondisinya perkembangan internasional antara lain perkembangan ilmu pengetahuan dan teknologi dan pemberlakuan pasar bebas, maka tujuan pendidikan tenaga kesehatan diarahkan untuk menghasilkan tenaga kesehatan yang kompeten, profesional, dan berdaya saing yang jumlah dan jenisnya sesuai dengan kebutuhan pasar kerja dalam tatanan pelayanan kesehatan di tingkat nasional dan global', '2018-03-15 17:48:22', '2018-05-25 03:56:51'),
-(26, 'theme_option_sambutan_nama', 'Dr. Taufan Maulamin', '2018-03-15 18:08:46', '2018-05-25 03:56:51'),
 (28, 'app_is_active', '1', '2018-07-08 15:52:11', '2018-10-14 00:37:36'),
 (29, 'site_name', 'APPERTI', '2018-07-30 07:42:26', '2018-10-14 00:37:36'),
-(30, 'site_description', 'Aliansi Penyelenggara Perguruan Tinggi Indonesia', '2018-07-30 07:42:40', '2018-10-14 00:37:36');
+(30, 'site_description', 'Aliansi Penyelenggara Perguruan Tinggi Indonesia', '2018-07-30 07:42:40', '2018-10-14 00:37:36'),
+(31, 'theme_option_email', 'info.apperti@gmail.com', '2018-10-23 19:07:38', '2018-10-24 02:25:30'),
+(32, 'theme_option_address', 'Menara YARSI Kav. 13 Lt. 1\r\nJl. Letjen. Suprapto, Cempaka Putih Timur', '2018-10-23 19:11:12', '2018-10-24 02:25:30'),
+(33, 'theme_option_about', 'Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.', '2018-10-23 19:23:33', '2018-10-24 02:25:30'),
+(34, 'theme_option_slider_1_image', '/photos/apperti-image.jpg', '2018-10-23 20:18:54', '2018-10-24 03:20:58'),
+(35, 'theme_option_slider_1_title', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
+(36, 'theme_option_slider_1_subtitle', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
+(37, 'theme_option_slider_1_button_text', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
+(38, 'theme_option_slider_1_button_link', '', '2018-10-23 20:18:54', '2018-10-24 03:19:42'),
+(39, 'theme_option_1_button_link', '', '2018-10-23 20:20:33', '2018-10-24 03:20:33'),
+(40, 'theme_option_slider_2_image', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
+(41, 'theme_option_slider_2_title', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
+(42, 'theme_option_slider_2_subtitle', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
+(43, 'theme_option_slider_2_button_text', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
+(44, 'theme_option_slider_2_button_link', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17');
 
 --
 -- Triggers `options`
@@ -90693,13 +90707,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `album_image`
 --
 ALTER TABLE `album_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -90723,7 +90737,7 @@ ALTER TABLE `category_post`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90747,7 +90761,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `permissions`

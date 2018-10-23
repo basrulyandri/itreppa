@@ -175,6 +175,19 @@ Route::group(['middleware' => 'app'],function(){
 			'uses' => 'GalleryController@index',
 			'as' => 'gallery.index',
 		]);
+		Route::get('gallery/album/{album}/edit', [
+				'uses' => 'GalleryController@edit',
+				'as' => 'gallery.edit',
+			]);
+		Route::get('gallery/album/{album}/delete', [
+				'uses' => 'GalleryController@delete',
+				'as' => 'gallery.delete',
+			]);
+
+		Route::post('gallery/album/{album}/update', [
+				'uses' => 'GalleryController@update',
+				'as' => 'gallery.update',
+			]);
 
 		Route::get('gallery/album/{album}/view', [
 				'uses' => 'GalleryController@albumview',

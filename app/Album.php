@@ -14,7 +14,7 @@ class Album extends Model
      *
      * @return array
      */   
-
+    protected $fillable= ['name','description'];
     public function sluggable()
     {
         return [

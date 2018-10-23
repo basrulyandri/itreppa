@@ -35,7 +35,16 @@ class ThemeSettingController extends Controller
 			if(is_array($value)){
 				$value = serialize($value);
 			}
-			Option::whereOptionKey($key)->update(['option_value' => $value]);
+
+			$option = Option::whereOptionKey($key)->first();
+			if($option){
+				$option->update(['option_value' => $value]);				
+			}else{	
+				Option::create([
+						'option_key' => $key,
+						'option_value' => $value
+					]);			
+			}
 		}
 
 		return redirect()->back()->with('success','Options has been Updated Successfully');

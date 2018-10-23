@@ -56,6 +56,36 @@
                         @endif
                       </div>
                     </div>
+
+                    <div class='form-group{{$errors->has('theme_option_email') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_email','Email',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::text('theme_option_email',getOption('theme_option_email'),['class' => 'form-control','placeholder' => 'Email'])!!}
+                        @if($errors->has('theme_option_email'))
+                          <span class="help-block">{{$errors->first('theme_option_email')}}</span>
+                        @endif
+                      </div>
+                    </div>
+
+                    <div class='form-group{{$errors->has('theme_option_address') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_address','Alamat',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::textarea('theme_option_address',getOption('theme_option_address'),['class' => 'form-control','placeholder' => 'Alamat'])!!}
+                        @if($errors->has('theme_option_address'))
+                          <span class="help-block">{{$errors->first('theme_option_address')}}</span>
+                        @endif
+                      </div>
+                    </div>
+
+                    <div class='form-group{{$errors->has('theme_option_about') ? ' has-error' : ''}}'>
+                      {!!Form::label('theme_option_about','Tentang',['class' => 'col-sm-2 control-label'])!!}
+                      <div class="col-sm-10">
+                        {!!Form::textarea('theme_option_about',getOption('theme_option_about'),['class' => 'form-control','placeholder' => 'Tentang'])!!}
+                        @if($errors->has('theme_option_about'))
+                          <span class="help-block">{{$errors->first('theme_option_about')}}</span>
+                        @endif
+                      </div>
+                    </div>
                     <hr>
 
                     <h3>Social Media</h3>  
