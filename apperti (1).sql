@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2018 at 06:09 PM
+-- Generation Time: Oct 23, 2018 at 07:11 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `albums` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   `description` text,
   `position` tinyint(11) DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -41,11 +42,12 @@ CREATE TABLE `albums` (
 -- Dumping data for table `albums`
 --
 
-INSERT INTO `albums` (`id`, `name`, `description`, `position`, `created_at`, `updated_at`) VALUES
-(1, 'Workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '0000-00-00 00:00:00'),
-(2, 'Baksos', 'Kegiatan sosial di lingkungan sekitar', 1, '2018-07-29 17:32:20', '0000-00-00 00:00:00'),
-(6, 'Seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-07-31 01:40:51'),
-(7, 'TEst', 'test', 0, '2018-10-10 13:48:48', '2018-10-10 20:48:48');
+INSERT INTO `albums` (`id`, `name`, `slug`, `description`, `position`, `created_at`, `updated_at`) VALUES
+(1, 'Workshop', 'workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '2018-10-13 23:49:07'),
+(2, 'Baksos', 'baksos', 'Kegiatan sosial di lingkungan sekitar', 1, '2018-07-29 17:32:20', '2018-10-13 23:49:10'),
+(6, 'Seminar', 'seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-10-13 23:49:17'),
+(7, 'TEst', 'test', 'test', 0, '2018-10-10 13:48:48', '2018-10-13 23:49:20'),
+(8, 'Dies natalis', 'dies-natalis', '', 0, '2018-10-13 16:50:25', '2018-10-13 23:50:25');
 
 --
 -- Triggers `albums`
@@ -75,10 +77,7 @@ CREATE TABLE `album_image` (
 --
 
 INSERT INTO `album_image` (`id`, `album_id`, `image_id`, `position`, `created_at`, `updated_at`) VALUES
-(5, 1, 3, 0, '2018-10-10 15:45:43', NULL),
-(6, 1, 4, 0, '2018-10-10 15:45:43', NULL),
-(7, 1, 5, 0, '2018-10-10 15:58:04', NULL),
-(8, 2, 6, 0, '2018-10-10 16:07:42', NULL);
+(11, 1, 9, 0, '2018-10-13 16:45:59', NULL);
 
 --
 -- Triggers `album_image`
@@ -7302,10 +7301,7 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `name`, `path`, `description`, `created_at`, `updated_at`) VALUES
-(3, 'asdas', '/photos/apperti-image.jpg', 'dasda', '2018-10-10 15:45:43', '2018-10-10 22:45:43'),
-(4, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', 'dasdasd', '2018-10-10 15:45:43', '2018-10-10 22:45:43'),
-(5, 'Seminar disrupsi', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'Seminar keren euy', '2018-10-10 15:58:04', '2018-10-10 22:58:04'),
-(6, 'test', '/photos/apperti-image.jpg', 'test', '2018-10-10 16:07:41', '2018-10-10 23:07:41');
+(9, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'dasdasd', '2018-10-13 16:45:59', '2018-10-13 23:45:59');
 
 --
 -- Triggers `images`
@@ -7363,8 +7359,7 @@ CREATE TABLE `menu_items` (
 --
 
 INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `menu`, `depth`, `created_at`, `updated_at`) VALUES
-(1, 'Home', 'http://localhost/stikes-imc-l53/public/', 0, 0, '', 1, 0, '2017-10-17 12:42:52', '2018-03-14 14:11:44'),
-(2, 'Profile', '#', 0, 1, '', 1, 0, '2017-10-17 13:37:05', '2018-03-16 16:57:05'),
+(2, 'Profile', '#', 0, 0, '', 1, 0, '2017-10-17 13:37:05', '2018-10-13 16:06:40'),
 (4, 'F.A.Q', '#', 0, 0, '', 2, 0, '2018-03-15 18:29:38', '2018-03-15 18:29:48'),
 (5, 'Kontak', '#', 0, 1, '', 2, 0, '2018-03-15 18:29:46', '2018-03-15 18:29:48'),
 (6, 'F.A.Q', '#', 0, 0, '', 3, 0, '2018-03-15 18:30:44', '2018-03-15 18:30:53'),
@@ -7373,15 +7368,16 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (9, 'Kegiatan', '#', 0, 1, '', 4, 0, '2018-03-15 18:31:39', '2018-03-15 18:32:02'),
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 18:31:48', '2018-03-15 18:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 18:31:58', '2018-03-15 18:32:02'),
-(12, 'Profil Perguruan Tinggi', 'http://localhost/stikes-imc-l53/public/profil-stikes-imc', 2, 2, '', 1, 1, '2018-03-15 19:07:33', '2018-03-16 16:57:05'),
-(13, 'Visi Misi', 'http://localhost/stikes-imc-l53/public/visi-dan-misi-stikes-imc', 2, 3, '', 1, 1, '2018-03-15 19:08:28', '2018-10-10 13:06:57'),
-(14, 'Struktur Organisasi', 'http://localhost/stikes-imc-l53/public/struk-tur-organisasi-stikes-imc', 2, 5, '', 1, 1, '2018-03-15 19:08:54', '2018-10-10 12:34:43'),
-(15, 'LPPM', 'http://localhost/stikes-imc-l53/public/lppm', 2, 6, '', 1, 1, '2018-03-15 19:09:14', '2018-10-10 12:34:43'),
-(16, 'Prodi', '#', 0, 7, '', 1, 0, '2018-03-16 16:55:32', '2018-10-10 12:34:43'),
-(17, 'PROGRAM D-III KEBIDANAN', 'http://localhost/stikes-imc-l53/public/program-d-iii-kebidanan', 16, 8, '', 1, 1, '2018-03-16 16:56:01', '2018-10-10 12:34:43'),
+(12, 'Profil Perguruan Tinggi', 'http://localhost/stikes-imc-l53/public/profil-stikes-imc', 2, 1, '', 1, 1, '2018-03-15 19:07:33', '2018-10-13 16:06:40'),
+(13, 'Visi Misi', 'http://localhost/stikes-imc-l53/public/visi-dan-misi-stikes-imc', 2, 2, '', 1, 1, '2018-03-15 19:08:28', '2018-10-13 16:06:40'),
+(14, 'Struktur Organisasi', 'http://localhost/stikes-imc-l53/public/struk-tur-organisasi-stikes-imc', 2, 4, '', 1, 1, '2018-03-15 19:08:54', '2018-10-13 16:06:41'),
+(15, 'LPPM', 'http://localhost/stikes-imc-l53/public/lppm', 2, 5, '', 1, 1, '2018-03-15 19:09:14', '2018-10-13 16:06:41'),
+(16, 'Prodi', '#', 0, 6, '', 1, 0, '2018-03-16 16:55:32', '2018-10-13 16:06:41'),
+(17, 'PROGRAM D-III KEBIDANAN', 'http://localhost/stikes-imc-l53/public/program-d-iii-kebidanan', 16, 7, '', 1, 1, '2018-03-16 16:56:01', '2018-10-13 16:06:41'),
 (18, 'Home', 'http://localhost/', 0, 1, NULL, 5, 0, '2018-08-10 10:42:21', '2018-08-10 10:42:21'),
 (19, 'Tentang kami', 'http://', 0, 2, NULL, 5, 0, '2018-08-10 10:42:30', '2018-08-10 10:42:30'),
-(20, 'Test level 3', '#', 13, 4, '', 1, 2, '2018-10-10 12:30:11', '2018-10-10 13:06:57');
+(20, 'Test level 3', '#', 13, 3, '', 1, 2, '2018-10-10 12:30:11', '2018-10-13 16:06:41'),
+(21, 'Galeri', 'galleries', 0, 8, '', 1, 0, '2018-10-13 17:18:43', '2018-10-13 17:18:45');
 
 -- --------------------------------------------------------
 
@@ -7424,12 +7420,12 @@ CREATE TABLE `options` (
 INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `updated_at`) VALUES
 (7, 'theme_option_amount_of_slider', '3', '2017-11-01 15:00:42', '2018-03-17 01:36:18'),
 (8, 'theme_option_slider_contents', 'a:3:{i:0;s:2:\"18\";i:1;s:2:\"20\";i:2;s:2:\"24\";}', '2017-11-01 15:35:29', '2018-03-17 01:36:18'),
-(9, 'theme_option_logo', '/photos/logo-header-email.png', '2018-01-04 16:44:46', '2018-05-25 03:55:54'),
-(10, 'theme_option_hotline', '0811 1078877', '2018-01-04 17:04:14', '2018-05-25 03:55:54'),
-(11, 'theme_option_facebook_url', 'https://www.facebook.com/S2.InstitutStiami/', '2018-01-04 17:11:01', '2018-05-25 03:55:54'),
-(12, 'theme_option_twitter_url', 'q', '2018-01-04 17:13:25', '2018-05-25 03:55:54'),
-(13, 'theme_option_instagram_url', 'q', '2018-01-04 17:13:25', '2018-05-25 03:55:54'),
-(14, 'theme_option_youtube_url', 'q', '2018-01-04 17:13:36', '2018-05-25 03:55:54'),
+(9, 'theme_option_logo', '/photos/logo-header-email.png', '2018-01-04 16:44:46', '2018-10-14 00:41:38'),
+(10, 'theme_option_hotline', '0811 1078877', '2018-01-04 17:04:14', '2018-10-14 00:41:38'),
+(11, 'theme_option_facebook_url', 'https://www.facebook.com/S2.InstitutStiami/', '2018-01-04 17:11:01', '2018-10-14 00:41:38'),
+(12, 'theme_option_twitter_url', '#', '2018-01-04 17:13:25', '2018-10-14 00:41:38'),
+(13, 'theme_option_instagram_url', '#', '2018-01-04 17:13:25', '2018-10-14 00:41:38'),
+(14, 'theme_option_youtube_url', '#', '2018-01-04 17:13:36', '2018-10-14 00:41:38'),
 (15, 'email_from', 'pascasarjana@stiami.ac.id', '2018-02-24 16:54:03', '2018-05-25 23:25:27'),
 (16, 'email_from_label', 'Pascasarjana Institut STIAMI', '2018-02-24 16:55:33', '2018-05-25 23:25:27'),
 (22, 'file_brosur', '/files/brosur pascasarjana STIAMI 2018.pdf', '2018-02-25 14:09:41', '2018-05-25 23:25:27'),
@@ -7437,9 +7433,9 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (24, 'theme_option_sambutan_image', '/photos/taufan.jpg', '2018-03-15 17:48:11', '2018-05-25 03:56:51'),
 (25, 'theme_option_sambutan_content', 'Perwujudan misi ini perlu sejalan Kondisinya perkembangan internasional antara lain perkembangan ilmu pengetahuan dan teknologi dan pemberlakuan pasar bebas, maka tujuan pendidikan tenaga kesehatan diarahkan untuk menghasilkan tenaga kesehatan yang kompeten, profesional, dan berdaya saing yang jumlah dan jenisnya sesuai dengan kebutuhan pasar kerja dalam tatanan pelayanan kesehatan di tingkat nasional dan global', '2018-03-15 17:48:22', '2018-05-25 03:56:51'),
 (26, 'theme_option_sambutan_nama', 'Dr. Taufan Maulamin', '2018-03-15 18:08:46', '2018-05-25 03:56:51'),
-(28, 'app_is_active', '1', '2018-07-08 15:52:11', '2018-08-10 21:33:56'),
-(29, 'site_name', 'APPERTI', '2018-07-30 07:42:26', '2018-08-14 21:26:30'),
-(30, 'site_description', 'Aliansi Penyelenggara Perguruan Tinggi Indonesia', '2018-07-30 07:42:40', '2018-08-10 21:33:32');
+(28, 'app_is_active', '1', '2018-07-08 15:52:11', '2018-10-14 00:37:36'),
+(29, 'site_name', 'APPERTI', '2018-07-30 07:42:26', '2018-10-14 00:37:36'),
+(30, 'site_description', 'Aliansi Penyelenggara Perguruan Tinggi Indonesia', '2018-07-30 07:42:40', '2018-10-14 00:37:36');
 
 --
 -- Triggers `options`
@@ -90697,13 +90693,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `album_image`
 --
 ALTER TABLE `album_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -90727,7 +90723,7 @@ ALTER TABLE `category_post`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90739,7 +90735,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `migrations`
