@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2018 at 10:54 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Oct 29, 2018 at 08:41 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,10 +43,8 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id`, `name`, `slug`, `description`, `position`, `created_at`, `updated_at`) VALUES
-(1, 'Workshop', 'workshop', 'Kegiatan workshop yang diadakan kampus', 0, '2018-07-29 17:31:51', '2018-10-24 01:01:54'),
-(2, 'Baksos', 'baksos', 'Kegiatan sosial di lingkungan sekitar', 1, '2018-07-29 17:32:20', '2018-10-13 23:49:10'),
-(6, 'Seminar', 'seminar', 'acara seminar yang diselenggarakan APPERTI', 0, '2018-07-30 18:40:51', '2018-10-13 23:49:17'),
-(8, 'Dies natalis', 'dies-natalis', '', 0, '2018-10-13 16:50:25', '2018-10-13 23:50:25');
+(17, 'Pelantikan APPERTI Sulawesi Barat', 'pelantikan-sulawesi-barat', 'Pelantikan pengurus APPERTI Sulawesi Barat', 0, '2018-10-29 14:56:19', '2018-10-29 22:07:44'),
+(18, 'Pelantikan APPERTI Gorontalo', 'pelantikan-apperti-gorontalo', 'Pelantikan APPERTI Gorontalo', 0, '2018-10-29 15:08:03', '2018-10-29 22:08:03');
 
 --
 -- Triggers `albums`
@@ -77,9 +75,16 @@ CREATE TABLE `album_image` (
 
 INSERT INTO `album_image` (`id`, `album_id`, `image_id`, `position`, `created_at`, `updated_at`) VALUES
 (11, 1, 9, 0, '2018-10-13 16:45:59', NULL),
-(12, 8, 10, 0, '2018-10-23 18:18:58', NULL),
-(14, 8, 12, 0, '2018-10-23 18:19:44', NULL),
-(15, 6, 13, 0, '2018-10-23 18:41:28', NULL);
+(15, 6, 13, 0, '2018-10-23 18:41:28', NULL),
+(18, 8, 16, 0, '2018-10-29 14:33:22', NULL),
+(19, 17, 17, 0, '2018-10-29 14:57:58', NULL),
+(20, 17, 18, 0, '2018-10-29 14:57:58', NULL),
+(21, 18, 19, 0, '2018-10-29 15:09:44', NULL),
+(22, 18, 20, 0, '2018-10-29 15:09:44', NULL),
+(23, 18, 21, 0, '2018-10-29 15:09:44', NULL),
+(24, 18, 22, 0, '2018-10-29 15:09:44', NULL),
+(25, 18, 23, 0, '2018-10-29 15:09:44', NULL),
+(26, 18, 24, 0, '2018-10-29 15:09:44', NULL);
 
 --
 -- Triggers `album_image`
@@ -7304,9 +7309,16 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`id`, `name`, `path`, `description`, `created_at`, `updated_at`) VALUES
 (9, 'asdasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', 'dasdasd', '2018-10-13 16:45:59', '2018-10-13 23:45:59'),
-(10, 'sdfsdf', '/photos/apperti-image.jpg', 'sdfsdf', '2018-10-23 18:18:58', '2018-10-24 01:18:58'),
-(12, ';lasd', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', ';ldskfsdf', '2018-10-23 18:19:44', '2018-10-24 01:19:44'),
-(13, 'kajksdapo', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', 'oisdfs', '2018-10-23 18:41:28', '2018-10-24 01:41:28');
+(13, 'kajksdapo', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', 'oisdfs', '2018-10-23 18:41:28', '2018-10-24 01:41:28'),
+(16, 'Pelantikan APPERTI sulawesi barat', '/photos/Pelantikan Sulawesi Barat/1.jpg', 'Pelantikan APPERTI sulawesi barat', '2018-10-29 14:33:22', '2018-10-29 21:33:22'),
+(17, '1', '/photos/Pelantikan Sulawesi Barat/1.jpg', '', '2018-10-29 14:57:58', '2018-10-29 21:57:58'),
+(18, '2', '/photos/Pelantikan Sulawesi Barat/2.jpg', '', '2018-10-29 14:57:58', '2018-10-29 21:57:58'),
+(19, '1', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44'),
+(20, '2', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg1.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44'),
+(21, '3', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg2.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44'),
+(22, '4', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg3.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44'),
+(23, '5', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg4.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44'),
+(24, '6', '/photos/Pelantikan APPERTI Gorontalo/Acara pelantikan gorontalo.jpg5.jpg', '', '2018-10-29 15:09:44', '2018-10-29 22:09:44');
 
 --
 -- Triggers `images`
@@ -7373,16 +7385,15 @@ INSERT INTO `menu_items` (`id`, `label`, `link`, `parent`, `sort`, `class`, `men
 (9, 'Kegiatan', '#', 0, 1, '', 4, 0, '2018-03-15 18:31:39', '2018-03-15 18:32:02'),
 (10, 'Pengumuman', '#', 0, 2, '', 4, 0, '2018-03-15 18:31:48', '2018-03-15 18:32:02'),
 (11, 'Karir', '#', 0, 3, '', 4, 0, '2018-03-15 18:31:58', '2018-03-15 18:32:02'),
-(12, 'Profil Perguruan Tinggi', 'http://localhost/stikes-imc-l53/public/profil-stikes-imc', 2, 1, '', 1, 1, '2018-03-15 19:07:33', '2018-10-13 16:06:40'),
-(13, 'Visi Misi', 'http://localhost/stikes-imc-l53/public/visi-dan-misi-stikes-imc', 2, 2, '', 1, 1, '2018-03-15 19:08:28', '2018-10-13 16:06:40'),
-(14, 'Struktur Organisasi', 'http://localhost/stikes-imc-l53/public/struk-tur-organisasi-stikes-imc', 2, 4, '', 1, 1, '2018-03-15 19:08:54', '2018-10-13 16:06:41'),
-(15, 'LPPM', 'http://localhost/stikes-imc-l53/public/lppm', 2, 5, '', 1, 1, '2018-03-15 19:09:14', '2018-10-13 16:06:41'),
-(16, 'Prodi', '#', 0, 6, '', 1, 0, '2018-03-16 16:55:32', '2018-10-13 16:06:41'),
-(17, 'PROGRAM D-III KEBIDANAN', 'http://localhost/stikes-imc-l53/public/program-d-iii-kebidanan', 16, 7, '', 1, 1, '2018-03-16 16:56:01', '2018-10-13 16:06:41'),
+(12, 'Tentang Kami', '#', 2, 1, '', 1, 1, '2018-03-15 19:07:33', '2018-10-29 14:00:18'),
+(13, 'Visi Misi', 'visi-dan-misi', 2, 2, '', 1, 1, '2018-03-15 19:08:28', '2018-10-29 14:06:12'),
 (18, 'Home', 'http://localhost/', 0, 1, NULL, 5, 0, '2018-08-10 10:42:21', '2018-08-10 10:42:21'),
 (19, 'Tentang kami', 'http://', 0, 2, NULL, 5, 0, '2018-08-10 10:42:30', '2018-08-10 10:42:30'),
-(20, 'Test level 3', '#', 13, 3, '', 1, 2, '2018-10-10 12:30:11', '2018-10-13 16:06:41'),
-(21, 'Galeri', 'galleries', 0, 8, '', 1, 0, '2018-10-13 17:18:43', '2018-10-13 17:18:45');
+(20, 'Susunan Pengurus', 'susunan-pengurus', 2, 3, '', 1, 1, '2018-10-10 12:30:11', '2018-10-29 14:00:40'),
+(21, 'Galeri', 'galleries', 0, 4, '', 1, 0, '2018-10-13 17:18:43', '2018-10-29 14:06:47'),
+(22, 'Link', '#', 0, 5, '', 1, 0, '2018-10-29 17:26:35', '2018-10-29 17:28:36'),
+(23, 'Kemenristek Dikti', 'https://ristekdikti.go.id/', 22, 6, '', 1, 1, '2018-10-29 17:27:12', '2018-10-29 17:28:37'),
+(24, 'LL-DIKTI', 'https://www.kopertis4.or.id/', 22, 7, '', 1, 1, '2018-10-29 17:28:28', '2018-10-29 17:28:37');
 
 -- --------------------------------------------------------
 
@@ -7436,7 +7447,7 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (28, 'app_is_active', '1', '2018-07-08 15:52:11', '2018-10-14 00:37:36'),
 (29, 'site_name', 'APPERTI', '2018-07-30 07:42:26', '2018-10-14 00:37:36'),
 (30, 'site_description', 'Aliansi Penyelenggara Perguruan Tinggi Indonesia', '2018-07-30 07:42:40', '2018-10-14 00:37:36'),
-(31, 'theme_option_email', 'info.apperti@gmail.com', '2018-10-23 19:07:38', '2018-10-24 02:25:30'),
+(31, 'theme_option_email', 'digicrea08@gmail.com', '2018-10-23 19:07:38', '2018-10-30 01:36:12'),
 (32, 'theme_option_address', 'Menara YARSI Kav. 13 Lt. 1\r\nJl. Letjen. Suprapto, Cempaka Putih Timur', '2018-10-23 19:11:12', '2018-10-24 02:25:30'),
 (33, 'theme_option_about', 'Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.', '2018-10-23 19:23:33', '2018-10-24 02:25:30'),
 (34, 'theme_option_slider_1_image', '/photos/apperti-image.jpg', '2018-10-23 20:18:54', '2018-10-24 03:20:58'),
@@ -7624,7 +7635,10 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `user_id`, `published_at`, `title`, `body`, `excerpt`, `status`, `slug`, `type`, `media_type`, `filename`, `parent`, `thumbnail`, `created_at`, `updated_at`) VALUES
 (2, 85, '2018-10-02 13:21:00', 'Seminar Nasional “Tantangan PTS di Era Digital Disruption”', '<p>Pendidikan kian hari makin dihadapkan dengan tantangan yang cukup berat, serta persaingan yang makin ketat.<span id=\"more-2216\"></span>Hal ini berlangsung oleh sebab banyaknya bentuk-bentuk baru dalam soal kebutuhan akan skill pelajar guna mengakselerasi dirinya dengan tantangan atau kebutuhan pasar yang berlangsung. Dan ini mau tidak mau mesti menjadi perhatian bagi lembaga pendidikan guna memberi bekal kemampuan kepada mereka.</p>\r\n<p>Dalam konteks hari ini kita dapat perhatikan bahwa dunia kreatif (industri kreatif) yang terpadu dengan pesatnya penemuan teknologi digital di mana model industri yang demikian ternyata cukup mampu memberi akses yang amat luas serta cepat pada tercapainya perolehan sisi finansial yang cukup tinggi. Tentu saja kenyataan ini membawa situasi baru bagi corak model komunikasi dan interaksi kebudayaan masa sekarang. Fenomena demikian populer saat ini disebut sebagai&nbsp;<em>Era Digital Disruption.&nbsp;</em>Sebuah era dimana media pertemuan manusia adalah layar digital, yang itu berarti hampir seluruh aktivitas yang menghubungkan manusia dengan lainnya dengan seluruh bentuk kepentingannya dimediasi oleh layar digital.</p>\r\n<p>Lembaga pendidikan terutama perguruan tinggi lagi-lagi menjadi lokus perhatian dan sorotan terkait sejauh mana dapat menyediakan kebutuhan skill dalam menopang era di atas. Oleh sebab itu fokus pemikiran mesti dilakukan, yakni berembug bersama menuangkan pemikiran yang lebih terukur bagaimana dapat merumuskan kerangka strategis bagi terselenggaranya proses pendidikan yang berdaya saing.</p>\r\n<p><br />Untuk itu Asosiasi Penyelenggara Perguruan Tinggi (APPERTI) sebuah perkumpulan yang bertujuan Memajukan Pendidikan Tinggi melalui penyelenggara yang profesional, kredibel, akuntabel, transparan menuju Indoensia yang lebih baik. Asosiasi ini hadir guna berkolidasi untuk saling menguatkan dan mendukung untuk seluruh kepentingan penyelenggaraan pendidikan. Sebagai pengantar pada pemikiran yang lebih strategis APPERTI menyelenggarakan Seminar Nasional dengan tema &ldquo;Tantangan PTS di Era Digital Disruption&rdquo; hari Jumat 5 Januari 2018.</p>\r\n<p>Rizal Ramli sebagai keynote Speaker dalam acara ini menuangkan banyak pemikirannya yang lugas dan kritis soal model pembangunan di Indonesia yang menurutnya masih menganut skema pembangunan berhaluan liberal-kapitalis. Di samping itu dia memberi penekanan bahwa pendidikan saat ini mesti diorientasikan pada kemampuan skill dan diharapkan lembaga Pendidikan tinggi untuk tak terlalu birokratis dalam proses pembelajarannya.</p>\r\n<p>Sementara Dino Patti Djalal dalam kapasitasnya sebagai Ketua Asosiasi Dosen seindonesia mengajak hadirin untuk memikirkan aspek-aspek lain sebagai implikasi dari kemajuan dunia digital, terlebih dia juga menyampaikan pengembangan<em>&nbsp;artificial intellegence&nbsp;</em>dengan penemuan robot manusia yang hampir menyerupai kecerdasan dan komunikasi ala manusia<em>.</em>&nbsp;Akan ada kegelisahan eksistensial selain perkembangan teknologi itu sendiri. Sedangkan Prof. Jurnalis Uddin dan Budi Djatimo masing-masing sebagai sebagai ketua Asosiasi ini dan Keta Umum APTISI menegaskan perlunya revolusi pendidikan. Yakni pendidikan yang menekankan kualitas dan negara diharapkan ikut meregulasi bagi hadirnya pendidikan yang berkualitas tersebut. Mereka juga mengelaborasi sejumlah persoalan yang dihadapi anggotanya yang antara lain soal kontestasi penerimaan mahasiswa antara kampus negeri dengan swasta. Selain itu juga soal birokasi administrasi negara yang amat panjang dan melelahkan dan kesulitan finansial yang dialami perguruan tinggi swasta.</p>\r\n<p><img class=\"alignnone wp-image-158\" src=\"http://s2.stiami.ac.id/wp-content/uploads/2018/01/Apperti2.jpg\" alt=\"\" width=\"1200\" height=\"800\" /><br />Dan terakhir Ary Ginanjar yang mengekspresikan kebanggaannya dengan perkumpulan ini karena ada tekad yang kuat untuk saling memajukan tanpa bantuan yang melimpah dari negara, yang menjadikan asosiasi ini benar-benar mandiri. Hal ini baginya sangat penting, karena perubahan terjadi bukan semata karena sarana dan prasarana yang memadai, tapi karena ada gairah yang besar (Passion), obsesi yang kuat, dan tujuan yang mulia untuk merubah dunia menjadi lebih baik. Kemudian akhir dari motivasinya meminta hadirin untuk berdiri dan dengan lantang bersama-sama menyanyikan lagu Kebyar-Kebyar. Dan STIAMI sebagai bagian dari perkumpulan ini juga turut andil berkontribusi bagi kemajuan APPERTI dan Bangsa Indonesia.</p>', 'Pendidikan kian hari makin dihadapkan dengan tantangan yang cukup berat, serta persaingan yang makin ketat.Hal ini berlangsung oleh sebab banyaknya bentuk-bentuk baru dalam soal kebutuhan akan skill pelajar guna mengakselerasi dirinya dengan tantangan atau kebutuhan pasar yang berlangsung.', 'published', 'seminar-nasional-tantangan-pts-di-era-digital-disruption', 'post', NULL, NULL, 0, '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg', '2018-10-02 06:21:00', '2018-10-02 21:56:17'),
-(3, 85, '2018-10-02 21:50:32', 'APPERTI Ajak Perguruan Tinggi Siap Hadapi Era Distruption', '<p>Memasuki era digitalisasi yang semakin berkembang,&nbsp; APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan &lsquo;Tantangan Perguruan Tinggi Di Era Digital Distruption&rsquo;. Kegiatan tersebut diadakan di aula kampus Yarsi Jakarta,&nbsp; Jumat&nbsp; (5/1).</p>\r\n<p>Seminar yang dibuka oleh ketua APPERTI Jurnalis Uddin ini menghadirkan Dewan Pengawas APPERTI Marzuki Ali dan&nbsp;<em>keynote speaker</em>&nbsp;Rizal Ramli.</p>\r\n<p>Rizal Ramli menyampaikan pekembangan yang terjadi di Indonesia baik,&nbsp; dari lini pendidikan maupun perekonomian. Menurutnya, perguruan tinggi jangan terlalu birokrasi, jangan terlalu dicekoki dengan informasi tetapi juga harusnya otodidak atau belajar untuk mencari tahu sendiri.</p>\r\n<p>&ldquo;Orang yang hebat adalah orang dapat belajar sendiri secara otodidak dan mencari tahu sendiri. Inilah jawaban bagi perguruan tinggi untuk menghadapi tantangan di era digital&nbsp;<em>distruption</em>,&rdquo; kata Rizal Ramli.</p>\r\n<p>Mantan Ketua DPR yang juga Ketua Dewan Pengawas APPERTI Marzuki Alie, saat memberikan sambutan di awal seminar, berharap dunia pendidikan Indonesia dapat semakin meningkat lagi dengan melakukan sinergi dengan semua pihak.</p>\r\n<p>Sebab, pendidikan dapat mengubah masa depan, mengubah orang bodoh menjadi pintar, serta menghasilkan sumber daya manusia yang kompeten sesuai dengan kebutuhan pasar. Dunia pendidikan dapat berkembang beriringan dengan dunia swasta dan&nbsp; dukungan pemerintah.</p>\r\n<p>Di seminar itu juga dilaksanakan diskusi panel yang menghadirkan narasumber lain, seperti Ketua Umum APPERTI Prof&nbsp; Dr Jurnalis Uddin, PAK;&nbsp; Direktur ESQ 165 Dr Ary Ginanjar Agustian, dan Ketua Umum Asosiasi Dosen Indonesia (ADI) Dr Dino Patti Djalal</p>', 'Memasuki era digitalisasi yang semakin berkembang,  APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan ‘Tantangan Perguruan Tinggi Di Era Digital Distruption’', 'published', 'apperti-ajak-perguruan-tinggi-siap-hadapi-era-distruption', 'post', NULL, NULL, 0, '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', '2018-10-02 14:50:32', '2018-10-02 21:50:32');
+(3, 85, '2018-10-02 21:50:32', 'APPERTI Ajak Perguruan Tinggi Siap Hadapi Era Distruption', '<p>Memasuki era digitalisasi yang semakin berkembang,&nbsp; APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan &lsquo;Tantangan Perguruan Tinggi Di Era Digital Distruption&rsquo;. Kegiatan tersebut diadakan di aula kampus Yarsi Jakarta,&nbsp; Jumat&nbsp; (5/1).</p>\r\n<p>Seminar yang dibuka oleh ketua APPERTI Jurnalis Uddin ini menghadirkan Dewan Pengawas APPERTI Marzuki Ali dan&nbsp;<em>keynote speaker</em>&nbsp;Rizal Ramli.</p>\r\n<p>Rizal Ramli menyampaikan pekembangan yang terjadi di Indonesia baik,&nbsp; dari lini pendidikan maupun perekonomian. Menurutnya, perguruan tinggi jangan terlalu birokrasi, jangan terlalu dicekoki dengan informasi tetapi juga harusnya otodidak atau belajar untuk mencari tahu sendiri.</p>\r\n<p>&ldquo;Orang yang hebat adalah orang dapat belajar sendiri secara otodidak dan mencari tahu sendiri. Inilah jawaban bagi perguruan tinggi untuk menghadapi tantangan di era digital&nbsp;<em>distruption</em>,&rdquo; kata Rizal Ramli.</p>\r\n<p>Mantan Ketua DPR yang juga Ketua Dewan Pengawas APPERTI Marzuki Alie, saat memberikan sambutan di awal seminar, berharap dunia pendidikan Indonesia dapat semakin meningkat lagi dengan melakukan sinergi dengan semua pihak.</p>\r\n<p>Sebab, pendidikan dapat mengubah masa depan, mengubah orang bodoh menjadi pintar, serta menghasilkan sumber daya manusia yang kompeten sesuai dengan kebutuhan pasar. Dunia pendidikan dapat berkembang beriringan dengan dunia swasta dan&nbsp; dukungan pemerintah.</p>\r\n<p>Di seminar itu juga dilaksanakan diskusi panel yang menghadirkan narasumber lain, seperti Ketua Umum APPERTI Prof&nbsp; Dr Jurnalis Uddin, PAK;&nbsp; Direktur ESQ 165 Dr Ary Ginanjar Agustian, dan Ketua Umum Asosiasi Dosen Indonesia (ADI) Dr Dino Patti Djalal</p>', 'Memasuki era digitalisasi yang semakin berkembang,  APPERTI (Aliansi Penyelenggara Perguruan Tinggi Indonesia) mengajak beberapa kampus di Indonesia agar turut berpartisipasi dalam mempersiapkan era digital dengan menyelenggarakan Seminar Nasional APPERTI bertemakan ‘Tantangan Perguruan Tinggi Di Era Digital Distruption’', 'published', 'apperti-ajak-perguruan-tinggi-siap-hadapi-era-distruption', 'post', NULL, NULL, 0, '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', '2018-10-02 14:50:32', '2018-10-02 21:50:32'),
+(4, 85, '2018-10-29 20:46:55', 'Susunan Pengurus', '<h3 style=\"text-align: center;\"><strong>SUSUNAN PENGURUS PUSAT</strong></h3>\r\n<h3 style=\"text-align: center;\"><strong>ALIANSI PENYELENGGARA PERGURUAN TINGGI INDONESIA (APPERTI) </strong></h3>\r\n<h3 style=\"text-align: center;\"><strong>PERIODE 2017-2021</strong></h3>\r\n<p style=\"text-align: left;\"><strong><u>I. Pelindung</u></strong></p>\r\n<p><u></u><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dr. Drs. H. M. Yusuf Kalla</strong></p>\r\n<p>II.&nbsp;<u style=\"font-weight: bold;\">Dewan Penasehat</u></p>\r\n<ol>\r\n<li><strong>Dr. Oesman Sapta Odang ( Ketua )</strong></li>\r\n<li><strong>Dr Tanri Abeng MBA</strong></li>\r\n<li>Prof. Din Syamsudin</li>\r\n<li>Prof. Dr. Amin Suma,MA.SH,MM.MSi</li>\r\n<li>Prof. Dr. Dailami Firdaus, SH, LLM, MBA</li>\r\n<li>Dr. Andi Surya</li>\r\n<li>Dr.Rizal Ramly</li>\r\n<li>Prof. Dr.Ki Supriyoko</li>\r\n<li>Prof .Dr.Basri Modding.SE.M.Si</li>\r\n</ol>\r\n<p><strong><u>III. Dewan Pakar</u></strong></p>\r\n<ol>\r\n<li><strong>Prof Dr.KH.Ma&rsquo;ruf Amin ( Ketua )</strong></li>\r\n<li><strong>Prof Dr.H.M.Hatta Ali SH MH</strong></li>\r\n<li><strong>Prof.Dr.Ir.Marsudi.Wahyu Kisworo.</strong></li>\r\n<li>KH. Dr. Cholil Nafis, MA</li>\r\n<li>Dr. Ary Ginanjar Agustian</li>\r\n<li>Dr. Suyanto.SE.M.Ak</li>\r\n<li>Dr.M.Syahrial Yusuf</li>\r\n<li>Dr.Adian Husaini.MA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>\r\n<li>Dr.Dino Patti Djalal</li>\r\n</ol>\r\n<p><strong><u>IV.&nbsp;Dewan Pembina</u></strong></p>\r\n<ol>\r\n<li><strong>Dr. Budi Djatmiko, M.Si, M.EI (Ketua)</strong></li>\r\n<li>Prof. Dr. Mansyur Ramly, SE, MSi</li>\r\n<li>Prof. Dr.Syaifuddin Iskandar, M.Pd</li>\r\n<li>Dr.Hasim A Abdullah.MM</li>\r\n<li>Dr.Zerni Melmusi,Ak.CA.MM</li>\r\n<li>Prof. Dr. Ir. Drs. H. Zainuddin, M.Pd</li>\r\n<li>Dr.Ir.Lutfhi Hasan.M.Sc</li>\r\n<li>Dr.Dewi Motik</li>\r\n<li>Faried Rachman.M.Sc</li>\r\n<li>Dr. Tony Rosyid</li>\r\n</ol>\r\n<p><strong>V.&nbsp;<u>Dewan Pengawas</u></strong></p>\r\n<ol>\r\n<li><strong> Marzuki Alie (Ketua)</strong></li>\r\n<li>Masduki Ahmad, SH, MH</li>\r\n<li>Zainulbahar Noor</li>\r\n<li>Syafei Antonio, MSc</li>\r\n<li>Anwar Sanusi</li>\r\n<li>Dr. Ir. H. Eddy Jusuf, Sp., MSi, MKom</li>\r\n<li>Panji Hendrarso, Ir, MM</li>\r\n<li>Dr.Ali Abdurrahman</li>\r\n<li>Furtasan Ali Yusuf</li>\r\n</ol>\r\n<p>&nbsp;</p>\r\n<h2 style=\"text-align: center;\"><strong><u>PENGURUS PUSAT APPERTI 2017-2022</u></strong></h2>\r\n<p><u>&nbsp;</u></p>\r\n<p><strong>Ketua Umum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Prof. Jurnalis Uddin</strong><br /> <strong>Wakil Ketua Umum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <strong>Prof. Dr. Edie Toet Hendratno, SH. M.Si</strong></p>\r\n<p>Ketu Bid. Organisasi &amp; Keanggotaan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: Dr.Abdul Gani Sidqi,SE,M.Si</p>\r\n<p>Ketua Bidang Hukum &amp; Perundangan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: Dr. Edy Susanto,SH,MH,MA</p>\r\n<p>Ketua Bid. Kerjasama Dalam &amp; LN&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: Prof. Dr. Suyatno, M.Pd<br /> Ketua Bid. Kewirausahaan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Dr. Andi Desfiandi</p>\r\n<p>Ketua Bid. Hub.Antar Lembaga&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Muchtar Noor Jaya</p>\r\n<p>Ketua Bid. Sos Bud&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: H. Herman Nawas</p>\r\n<p>Ketua Bid. Humas &amp; ICT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Dr. Ir. Naba Aji Natasaputra</p>\r\n<p>Ketua Bid. Perizinan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Zaharuddin.SE.MM.Ph.D</p>\r\n<p>Ketua Bid. Pembiayaan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Ek. Budi Santoso, SE, MM</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Sekretaris Jend.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Taufan Maulamin, SE, Ak, MM</strong></p>\r\n<p>Sekretaris &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Drs. Agus Suarman Sudarsa,M.Si</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Sri Watini, S.Pd.I., M.Pd</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Mukhamad Yasid, M.Si</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Andi A Koro</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Jamal Hanaffy, SE, SH, MH</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.A.Talib.MA.MM</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Aspizain Chaniago</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Wahyu Wismanto Hadi,SE.MM</p>\r\n<p>Sekretaris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Hendri Kampai</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Bendahara Umum&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: Dr. Rosiyati MH Thamrin</strong><strong><br /> </strong>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Irzanita Whatan, M.M., MKes</p>\r\n<p>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Patwan Siahaan, SH, SE, MH<br /> Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Kemal Taufik</p>\r\n<p>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Terry</p>\r\n<p>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Ani Yuliani</p>\r\n<p>Bendahara&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dra Yenny Budiasih.MBA</p>\r\n<p>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Susi Marni, SE MM MBA</p>\r\n<p>Bendahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Drs.Andi Ladu Manoppo.MM</p>\r\n<p>&nbsp;</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.H.Sophiyanto Wuryan.SH.MM</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Moch. Wahyudi, MM, M.Pd</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; : Ir.Moh.Mardiyana.MM<br /> Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; : Prof. Dr. Tajudin Malik</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Bustamar Ayza SH MM&nbsp;</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Ir. Hidayatullah Daud, MT</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Ir.Fino Wahyudi,ST.MM</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. Filius Chandra</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Drs. Buchari Yusuf</p>\r\n<p>Kepala Bidang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Andala Rama Putra</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr. H.E.R. Taufik</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Muhammad Khadavi</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Rendi Susiswo Ismail&nbsp;</p>\r\n<p>Kepala Bidang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Ari Supit.</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr Rudi Lumanto</p>\r\n<p>Kepala Bidang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.Sidik Dero Soekono</p>\r\n<p>Kepala Bidang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Dr.dr.Arend L.Mapanawang,Sp.PD</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p><strong>Koordinator Wilayah Provinsi&nbsp; : Ex Officio Ketua APPERTI wilayah</strong></p>', '', 'published', 'susunan-pengurus', 'page', NULL, NULL, 0, '/assets/backend/img/no-thumbnail.jpg', '2018-10-29 13:46:55', '2018-10-29 20:58:55'),
+(5, 85, '2018-10-29 21:05:32', 'Tentang Kami', '', '', 'published', 'tentang-kami', 'page', NULL, NULL, 0, '', '2018-10-29 14:05:32', '2018-10-29 21:05:32'),
+(6, 85, '2018-10-29 21:05:44', 'Visi dan Misi', '', '', 'published', 'visi-dan-misi', 'page', NULL, NULL, 0, '', '2018-10-29 14:05:44', '2018-10-29 21:05:44');
 
 --
 -- Triggers `posts`
@@ -8315,6 +8329,7 @@ DELIMITER ;
 CREATE TABLE `universities` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `yayasan_name` varchar(255) DEFAULT NULL,
   `rektor_name` varchar(255) NOT NULL,
   `phone` varchar(45) NOT NULL,
   `website_url` varchar(100) NOT NULL,
@@ -8327,9 +8342,8 @@ CREATE TABLE `universities` (
 -- Dumping data for table `universities`
 --
 
-INSERT INTO `universities` (`id`, `name`, `rektor_name`, `phone`, `website_url`, `address`, `created_at`, `updated_at`) VALUES
-(3, 'STIKES IMC Bintaro', 'Peter simanjuntak', '082347242', 'stikesimcbintaro.com', 'Bintaro', '2018-10-01 16:23:24', '2018-10-01 23:23:24'),
-(5, 'Gala Indonesi', 'sardjono', '09823472', 'fsdfsd.com', 'sawangan', '2018-10-01 16:40:10', '2018-10-01 23:40:10');
+INSERT INTO `universities` (`id`, `name`, `yayasan_name`, `rektor_name`, `phone`, `website_url`, `address`, `created_at`, `updated_at`) VALUES
+(8, 'STIKES IMC Bintaro', 'Gala Indonesia', 'Peter simanjuntak', '87878719285', 'stikesimcbintaro.com', 'Bintaro', '2018-10-29 18:44:33', '2018-10-30 01:44:33');
 
 -- --------------------------------------------------------
 
@@ -8360,8 +8374,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `api_token`, `created_at`, `updated_at`) VALUES
 (85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25'),
-(90, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$P0pGNfE1U/M7gFGXORfFEOOdwiOwWG1Nk6xQIioXKjRdZKs/eP91a', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:23:24', '2018-10-01 23:23:24'),
-(92, 3, 'basrul2', 'yandribisnis@gmail.com', '$2y$10$Syx7JYP9OxWNU5pB1oXHuO/5R8LxjpNI6G1QRfa343xp.CY8mGW3K', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-01 16:40:10', '2018-10-01 23:40:10');
+(95, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$Ueg3alCDCtOYFU.hMdXLPuK.T88JN8C9jG3MR0RJpEXcxu6SP6HUO', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-29 18:44:33', '2018-10-30 01:44:33');
 
 --
 -- Triggers `users`
@@ -8402,8 +8415,7 @@ CREATE TABLE `user_profiles` (
 --
 
 INSERT INTO `user_profiles` (`id`, `user_id`, `first_name`, `last_name`, `facebook_url`, `twitter_url`, `linkedin_url`, `agama`, `jenis_kelamin`, `phone`, `address`, `nickname`, `about`, `photo`, `university_id`, `created_at`, `updated_at`) VALUES
-(1, 90, 'Dienna', 'Ahmad', NULL, NULL, NULL, 'Islam', 'L', '08797979909', 'Depok', NULL, NULL, NULL, 5, '2018-10-01 16:23:24', '2018-10-02 16:18:22'),
-(3, 92, 'Basrul', 'Yandri', NULL, NULL, NULL, 'islam', 'P', '092342', 'Depok', NULL, NULL, NULL, 5, '2018-10-01 16:40:10', '2018-10-01 16:40:10');
+(6, 95, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '087878719285', 'Bandung', NULL, NULL, NULL, 8, '2018-10-29 18:44:33', '2018-10-29 19:13:31');
 
 -- --------------------------------------------------------
 
@@ -90707,13 +90719,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `album_image`
 --
 ALTER TABLE `album_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `anggota`
@@ -90737,7 +90749,7 @@ ALTER TABLE `category_post`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -90749,7 +90761,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -90779,7 +90791,7 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
@@ -90803,19 +90815,19 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `universities`
 --
 ALTER TABLE `universities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `user_profiles`
 --
 ALTER TABLE `user_profiles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

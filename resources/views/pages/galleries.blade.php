@@ -16,7 +16,7 @@
 		<div class="row margin-bottom-40">
 			<div class="col-md-12 col-sm-12">
             	<div class="col-md-12">
-            <h1>Gallery</h1>
+            <h1>Galeri</h1>
             <div class="content-page">
               <div class="row margin-bottom-40">
               	@foreach($albums as $album)

@@ -25,9 +25,9 @@ class AnggotaController extends Controller
         return redirect()->back()->with('success','Anggota has been created Successfully');
     }
 
-    public function show(Anggota $anggota)
+    public function show($anggota)
     {        
-
+        $anggota = User::find($anggota);
         return view('anggota.show',compact(['anggota']));
     }
 

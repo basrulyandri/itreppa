@@ -10,6 +10,19 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+
+Route::get('thumb', function(){
+	$path = '/photos/Pelantikan Sulawesi Barat/1.jpg';
+	//$path = '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta.jpg';
+	$explode = explode('/', $path);
+	if(sizeof($explode) <= 3){
+		$thumb = '/photos/thumb'.substr($path, 7);		
+	}else{
+		$thumb = '/photos/'.$explode[2].'/thumbs/'.$explode[3];
+	}
+
+	dd($thumb);
+});
 Route::get('mail', function(){
 	$user = \App\User::find(90);
 	return (new App\Mail\UserRegistered($user))->render();

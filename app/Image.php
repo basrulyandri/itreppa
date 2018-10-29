@@ -16,4 +16,15 @@ class Image extends Model
     {
     	return $this->belongsToMany('App\Album');
     }
+
+    public function thumbnail()
+    {     
+        $explode = explode('/', $this->path);
+        if(sizeof($explode) <= 3){
+            $thumb = '/photos/thumbs'.substr($this->path, 7);      
+        }else{
+            $thumb = '/photos/'.$explode[2].'/thumbs/'.$explode[3];
+        }
+        return $thumb;
+    }
 }

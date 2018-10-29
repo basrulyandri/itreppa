@@ -186,7 +186,9 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
               <h2>Galeri Foto</h2>
               <ul class="list-unstyled">
                 @foreach(\App\Image::inRandomOrder()->take(15)->get() as $footerimage)
-                  <li><a href="{{route('page.album.single',$footerimage->albums()->first()->slug)}}"><img alt="" src="{{$footerimage->path}}"></a></li>
+                  @if(!$footerimage->albums->isEmpty())
+                  <li><a href="{{route('page.album.single',$footerimage->albums()->first()->slug)}}"><img alt="" src="{{$footerimage->thumbnail()}}"></a></li>
+                  @endif
                 @endforeach                
               </ul>                    
             </div>
@@ -218,7 +220,7 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
           <!-- END PAYMENTS -->
           <!-- BEGIN POWERED -->
           <div class="col-md-4 col-sm-4 text-right">
-            <p class="powered">Powered by: <a href="http://www.keenthemes.com/">rolloic.com.com</a></p>
+            <p class="powered">Powered by: <a href="http://www.keenthemes.com/">rolloic.com</a></p>
           </div>
           <!-- END POWERED -->
         </div>

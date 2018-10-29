@@ -113,8 +113,16 @@
 	                <div class="col-md-6 col-sm-6 blog-sidebar">
 	                	<div class="form-horizontal">
 	                		<fieldset>
-	                			<legend>Data Perguruan Tinggi</legend>	                			
-
+	                			<legend>Data Yayasan & Perguruan Tinggi</legend>	                			
+								<div class='form-group{{$errors->has('yayasan_name') ? ' has-error' : ''}}'>
+								  {!!Form::label('yayasan_name','Nama Yayasan',['class' => 'col-sm-4 control-label'])!!}
+								  <div class="col-sm-8">
+								    {!!Form::text('yayasan_name',old('yayasan_name'),['class' => 'form-control','placeholder' => 'Nama Yayasan','required' => 'true'])!!}
+								    @if($errors->has('yayasan_name'))
+								      <span class="help-block">{{$errors->first('yayasan_name')}}</span>
+								    @endif
+								  </div>
+								</div>
 	                			<div class='form-group{{$errors->has('university_name') ? ' has-error' : ''}}'>
 	                			  {!!Form::label('university_name','Nama Perguruan Tinggi',['class' => 'col-sm-4 control-label'])!!}
 	                			  <div class="col-sm-8">

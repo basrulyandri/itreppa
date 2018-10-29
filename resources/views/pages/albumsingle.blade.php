@@ -24,8 +24,8 @@
               <div class="row margin-bottom-40">
               	@foreach($album->images as $image)
                 <div class="col-md-3 col-sm-4 gallery-item">                  
-                  <a data-rel="fancybox-button" title="{{$image->name}}" href="{{$album->thumbnail()}}" class="fancybox-button">
-                    <img alt="" src="{{$album->thumbnail()}}" class="img-responsive">
+                  <a data-rel="fancybox-button" title="{{$image->name}}" href="{{$image->path}}" class="fancybox-button">
+                    <img alt="" src="{{$image->thumbnail()}}" class="img-responsive">
                     <div class="zoomix"><i class="fa fa-search"></i></div>                    
                   </a> 
                 </div>                     

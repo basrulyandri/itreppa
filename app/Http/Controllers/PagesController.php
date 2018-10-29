@@ -7,6 +7,7 @@ use App\Aplikan;
 use App\Category;
 use App\Events\FormDownloadBrosurEvent;
 use App\Mail\UserRegistered;
+use App\Mail\UserRegisteredNotificatioToAdmin;
 use App\Post;
 use App\University;
 use App\User;
@@ -104,8 +105,9 @@ class PagesController extends Controller
 			'activated' => 1,			
 		]);
 
-		$university = University::create([
+		$university = University::create([			
 			'name' => $request->university_name,
+			'yayasan_name' => $request->yayasan_name,
 			'rektor_name' => $request->rektor_name,
 			'phone' => $request->university_phone,
 			'website_url' => $request->website,
@@ -121,12 +123,13 @@ class PagesController extends Controller
 			'university_id' => $university->id			
 		]);
 		\Mail::to($user->email)->send(new UserRegistered($user));
+		\Mail::to(getOption('theme_option_email'))->send(new UserRegisteredNotificatioToAdmin($user));
 		return view('pages.registrationthankyou');
 	}
 
 	public function galleries()
 	{
-		$albums = Album::paginate(10);
+		$albums = Album::orderBy('created_at','desc')->paginate(10);
 		return view('pages.galleries',compact(['albums']));
 	}
 

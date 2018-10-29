@@ -34,6 +34,6 @@ class Album extends Model
 			return url('/assets/frontend/corporate/img/default-thumb.jpg');
 		}
 
-		return $this->images->first()->path;
+		return $this->images->first()->thumbnail();
 	}
 }
