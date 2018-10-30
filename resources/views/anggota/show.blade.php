@@ -32,7 +32,7 @@
                 <table class="table table-striped">
                     <tr>                        
                         <td class="text-right">Nama :</td>
-                        <td>{{$anggota->profile->first_name}} {{$anggota->profile->last_name}}</td>
+                        <td><strong>{{$anggota->profile->first_name}} {{$anggota->profile->last_name}}</strong></td>
                     </tr>              
                     
                     <tr>                        
@@ -42,6 +42,43 @@
                     <tr>                        
                         <td class="text-right">Telpon :</td>
                         <td>{{$anggota->profile->phone}}</td>
+                    </tr>
+
+                    <tr>                        
+                        <td class="text-right">Agama :</td>
+                        <td>{{$anggota->profile->agama}}</td>
+                    </tr>
+                    <tr>                        
+                        <td class="text-right">Alamat :</td>
+                        <td>{{$anggota->profile->address}}</td>
+                    </tr>
+                </table>                
+            </div>
+
+            <div class="col-lg-6">
+                <h3 class="text-center">Data Yayasan & Perguruan Tinggi</h3>
+                <table class="table table-striped">
+                    <tr>                        
+                        <td class="text-right">Nama Yayasan :</td>
+                        <td>{{$anggota->profile->university->yayasan_name}}</td>
+                    </tr>              
+                    
+                    <tr>                        
+                        <td class="text-right">Nama Perguruan Tinggi :</td>
+                        <td>{{$anggota->profile->university->name}}</td>
+                    </tr>
+                    <tr>                        
+                        <td class="text-right">Telpon :</td>
+                        <td>{{$anggota->profile->university->phone}}</td>
+                    </tr>
+
+                    <tr>                        
+                        <td class="text-right">Website :</td>
+                        <td>{{$anggota->profile->university->website_url}}</td>
+                    </tr>
+                    <tr>                        
+                        <td class="text-right">Alamat :</td>
+                        <td>{{$anggota->profile->university->address}}</td>
                     </tr>
                 </table>                
             </div>

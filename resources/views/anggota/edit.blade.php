@@ -93,15 +93,7 @@
                         </div>
                       </div>
 
-                      <div class='form-group{{$errors->has('university_id') ? ' has-error' : ''}}'>
-                        {!!Form::label('university_id','Perguruan tinggi',['class' => 'col-sm-2 control-label'])!!}
-                        <div class="col-sm-10">
-                          {!!Form::select('university_id',\App\University::pluck('name','id'),$anggota->profile->university_id,['class' => 'form-control'])!!}
-                          @if($errors->has('university_id'))
-                            <span class="help-block">{{$errors->first('university_id')}}</span>
-                          @endif
-                        </div>
-                      </div>
+                      
         </div>
     </div>       
   </div>

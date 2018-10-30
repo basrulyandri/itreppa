@@ -29,6 +29,7 @@
                       <th>Nama</th>
                       <th>email</th>  
                       <th>Telpon</th>
+                      <th>Yayasan</th>
                       <th>Perguruan Tinggi</th>
                       <th style="width:10%;">Actions</th>        
                     </tr>
@@ -40,6 +41,7 @@
               <td>{{$angg->fullName()}}</td>
               <td>{{$angg->email}}</td> 
               <td>{{$angg->profile->phone}}</td>
+              <td>{{$angg->profile->university->yayasan_name}}</td>
               <td>{{$angg->profile->university->name}}</td>             
               <td>
                 
