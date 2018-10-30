@@ -11,55 +11,21 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <!-- First slide -->
-                    <div class="item active" style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/slider-apperti.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-seven text-uppercase text-center">
-                                <h2 class="margin-bottom-20 animate-delay carousel-title-v5" data-animation="animated fadeInDown">
-                                    SEMINAR NASIONAL <br/>                                    
-                                </h2>
-                                <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">Tantangan PTS di era Digital Dsruption</p>
-                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Selengkapnya!</a>
+                    @foreach(sliders() as $key => $slider)
+                    @if($slider['theme_option_slider_'.$key.'_image'] != '')
+                        <div class="item @if($key == 1) active @endif" style="background: url({{url('/')}}{{$slider['theme_option_slider_'.$key.'_image']}});background-size: cover; background-position: center center;">
+                            <div class="container">
+                                <div class="carousel-position-seven text-uppercase text-center">
+                                    <h2 class="margin-bottom-20 animate-delay carousel-title-v5" data-animation="animated fadeInDown">
+                                        {{$slider['theme_option_slider_'.$key.'_title']}} <br/>                                    
+                                    </h2>
+                                    <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">{{$slider['theme_option_slider_'.$key.'_subtitle']}}</p>
+                                    <a class="carousel-btn-green" href="{{$slider['theme_option_slider_'.$key.'_button_link']}}" data-animation="animated fadeInUp">{{$slider['theme_option_slider_'.$key.'_button_text']}}</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Second slide -->
-                    <div class="item"  style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-five">
-                                <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Need a website design?
-                                </h2>
-                                <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    This is what you were looking for
-                                </p>
-                                <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                                    Sed est nunc, sagittis at consectetur id.
-                                </p>
-                                <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Purchase Now!</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Third slide -->
-                    <div class="item"  style="background: url({{asset('assets/frontend')}}/pages/img/frontend-slider/bg-15.jpg);background-size: cover; background-position: center center;">
-                        <div class="container">
-                            <div class="carousel-position-six">
-                                <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Powerful &amp; Clean
-                                </h2>
-                                <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                                    Responsive Website &amp; Admin Theme
-                                </p>
-                                <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                                    Sed est nunc, sagittis at consectetur id.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                    @endforeach                   
 
                 <!-- Controls -->
                 <a class="left carousel-control carousel-control-shop carousel-control-frontend" href="#carousel-example-generic" role="button" data-slide="prev">

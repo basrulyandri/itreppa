@@ -66,10 +66,10 @@ function pages(){
 	return \App\Post::whereType('page')->whereStatus('published')->orderBy('created_at','desc')->get();
 }
 
-function sliders()
-{	
-	return \App\Post::whereIn('id',array_flatten(unserialize(getOption('theme_option_slider_contents'))))->get();
-}
+// function sliders()
+// {	
+// 	return \App\Post::whereIn('id',array_flatten(unserialize(getOption('theme_option_slider_contents'))))->get();
+// }
 
 function latestPosts($take = 5,$category_id = null){
 	if($category_id){
@@ -111,4 +111,16 @@ function createUsername($firstname)
        $countUser = count($userRows) + 1;
 
        return ($countUser > 1) ? "{$username}{$countUser}" : $username;
+}
+
+function sliders()
+{
+	$sliders = [];
+	for ($i=1; $i < 6; $i++) { 
+		$slider = \App\Option::where('option_key','LIKE','theme_option_slider_'.$i.'_%')->get();
+		foreach($slider as $key => $item){
+			$sliders[$i][$item->option_key] = $item->option_value;			
+		}
+	}
+	return $sliders;
 }
