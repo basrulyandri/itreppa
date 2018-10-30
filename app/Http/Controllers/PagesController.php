@@ -17,6 +17,7 @@ class PagesController extends Controller
 {
 	public function index(Request $request)
 	{
+		//dd(sliders());
 		//\Cookie::get('sin');
 		if($request->has('psr')){
 			return response()->view('pages.index')->cookie('psr', $request->psr, time() + (86400 * 30));
