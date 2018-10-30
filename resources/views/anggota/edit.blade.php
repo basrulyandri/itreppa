@@ -22,7 +22,7 @@
   <div class="col-md-6">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Edit Anggota</h5>          
+            <h5>Edit data pribadi Anggota</h5>          
         </div>
         <div class="ibox-content">        
               {!!Form::open(['route' =>['anggota.update',$anggota],'method' => 'PATCH', 'class' => 'form-horizontal'])!!}
@@ -101,7 +101,7 @@
   <duv class="col-md-6">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Edit Anggota</h5>          
+            <h5>Edit data Yayasan dan Perguruan tinggi</h5>          
         </div>
         <div class="ibox-content form-horizontal">        
           <div class='form-group{{$errors->has('university_id') ? ' has-error' : ''}}'>

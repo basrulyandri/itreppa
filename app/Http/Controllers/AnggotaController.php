@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\University;
 
 class AnggotaController extends Controller
 {
     public function index()
     {        
-        $anggota = User::whereRoleId(3)->paginate(20);
+        $anggota = User::whereRoleId(3)->orderBy('created_at','desc')->paginate(20);
         return view('anggota.index',compact(['anggota']));
     }
 
@@ -19,10 +20,35 @@ class AnggotaController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
-        $anggota = User::create($request->all());
+        //dd($request->all());
+        $password = str_random(8);
+        $user = User::create([
+            'role_id' => 3,
+            'username' => createUsername($request->first_name),
+            'email' => $request->email,
+            'password' => bcrypt($password),
+            'activated' => 1,           
+        ]);
 
-        return redirect()->back()->with('success','Anggota has been created Successfully');
+        $university = University::create([          
+            'name' => $request->university_name,
+            'yayasan_name' => $request->yayasan_name,
+            'rektor_name' => $request->rektor_name,
+            'phone' => $request->university_phone,
+            'website_url' => $request->website_url,
+            'address' => $request->university_address
+        ]);
+        $user->profile()->create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'phone' => $request->phone,
+            'agama' => $request->agama,
+            'address' => $request->address,
+            'university_id' => $university->id          
+        ]);
+
+        return redirect()->route('anggota.index')->with('success','Data anggota berhasil ditambahkan');
     }
 
     public function show($anggota)
@@ -43,14 +69,16 @@ class AnggotaController extends Controller
         $anggota->update($request->all());
         $anggota->profile->update($request->all());
 
-        return redirect()->route('anggota.index')->with('success','Product has been updated Successfully');
+        return redirect()->route('anggota.index')->with('success','Data anggota berhasil diupdate');
     }
 
-    public function destroy(Anggota $anggota)
+    public function destroy($anggota)
     {
+        $anggota = User::find($anggota);
+        $anggota->profile->delete();
         $anggota->delete();
 
-        return redirect()->route('anggota.index')->with('success','Product has been deleted Successfully');
+        return redirect()->route('anggota.index')->with('success','Data anggota berhasil di Hapus');
     }
 
     public function deleteAll(Request $request)

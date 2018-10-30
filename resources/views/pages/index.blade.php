@@ -16,7 +16,7 @@
 @stop
 
 @section('header_title')
-	{{getOption('site_name')}}
+	Aliansi Penyelenggara Perguruan Tinggi Indonesia
 @stop
 @section('content')
     

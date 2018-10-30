@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2018 at 02:00 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.1.19
+-- Generation Time: Oct 30, 2018 at 07:05 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -7451,10 +7451,10 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (32, 'theme_option_address', 'Menara YARSI Kav. 13 Lt. 1\r\nJl. Letjen. Suprapto, Cempaka Putih Timur', '2018-10-23 19:11:12', '2018-10-24 02:25:30'),
 (33, 'theme_option_about', 'Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.', '2018-10-23 19:23:33', '2018-10-24 02:25:30'),
 (34, 'theme_option_slider_1_image', '/photos/apperti-image.jpg', '2018-10-23 20:18:54', '2018-10-24 03:20:58'),
-(35, 'theme_option_slider_1_title', 'Test', '2018-10-23 20:18:54', '2018-10-30 19:03:10'),
+(35, 'theme_option_slider_1_title', 'APPERTI Membangun negeri', '2018-10-23 20:18:54', '2018-10-31 01:03:17'),
 (36, 'theme_option_slider_1_subtitle', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
-(37, 'theme_option_slider_1_button_text', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
-(38, 'theme_option_slider_1_button_link', '', '2018-10-23 20:18:54', '2018-10-24 03:19:42'),
+(37, 'theme_option_slider_1_button_text', 'Daftar', '2018-10-23 20:18:54', '2018-10-31 01:03:17'),
+(38, 'theme_option_slider_1_button_link', 'http://127.0.0.1:8000/register', '2018-10-23 20:18:54', '2018-10-31 01:03:17'),
 (39, 'theme_option_1_button_link', '', '2018-10-23 20:20:33', '2018-10-24 03:20:33'),
 (40, 'theme_option_slider_2_image', '/photos/apperti-menyelenggarakan-seminar-nasional-did-kampus-yarsi-jakarta-_180110055314-859.jpg', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
 (41, 'theme_option_slider_2_title', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
@@ -8336,8 +8336,8 @@ CREATE TABLE `universities` (
   `name` varchar(255) NOT NULL,
   `yayasan_name` varchar(255) DEFAULT NULL,
   `rektor_name` varchar(255) NOT NULL,
-  `phone` varchar(45) NOT NULL,
-  `website_url` varchar(100) NOT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `website_url` varchar(100) DEFAULT NULL,
   `address` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL
@@ -8348,7 +8348,10 @@ CREATE TABLE `universities` (
 --
 
 INSERT INTO `universities` (`id`, `name`, `yayasan_name`, `rektor_name`, `phone`, `website_url`, `address`, `created_at`, `updated_at`) VALUES
-(8, 'STIKES IMC Bintaro', 'Gala Indonesia', 'Peter simanjuntak', '87878719285', 'stikesimcbintaro.com', 'Bintaro', '2018-10-29 18:44:33', '2018-10-30 01:44:33');
+(8, 'STIKES IMC Bintaro', 'Gala Indonesia', 'Peter simanjuntak', '87878719285', 'stikesimcbintaro.com', 'Bintaro', '2018-10-29 18:44:33', '2018-10-30 01:44:33'),
+(9, '098743284', 'sjdfns', 'fdsfn', NULL, NULL, 'sndjfs', '2018-10-30 17:46:02', '2018-10-31 00:46:02'),
+(10, 'lkjhgisd', 'sgfkjhklfs', 'kjdghdj', 'djfhgjd', NULL, 'dfjgdhgkjd', '2018-10-30 17:48:51', '2018-10-31 00:48:51'),
+(11, 'Ganesha', 'Ganesha', 'ganesah', '092648247', 'hjasdad.com', 'jasfhskdfsbfs', '2018-10-30 17:51:09', '2018-10-31 00:51:09');
 
 -- --------------------------------------------------------
 
@@ -8379,7 +8382,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `api_token`, `created_at`, `updated_at`) VALUES
 (85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25'),
-(95, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$Ueg3alCDCtOYFU.hMdXLPuK.T88JN8C9jG3MR0RJpEXcxu6SP6HUO', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-29 18:44:33', '2018-10-30 01:44:33');
+(95, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$Ueg3alCDCtOYFU.hMdXLPuK.T88JN8C9jG3MR0RJpEXcxu6SP6HUO', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-29 18:44:33', '2018-10-30 01:44:33'),
+(101, 3, 'basrul2', 'akjgsdfa@gmail.com', '$2y$10$drEhlZ0fh.4D76a0Axpj3.1ySwaPyPP3/yCI4w5Uc6XgtbZ1JsOxy', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-30 17:51:09', '2018-10-31 00:51:09');
 
 --
 -- Triggers `users`
@@ -8420,7 +8424,8 @@ CREATE TABLE `user_profiles` (
 --
 
 INSERT INTO `user_profiles` (`id`, `user_id`, `first_name`, `last_name`, `facebook_url`, `twitter_url`, `linkedin_url`, `agama`, `jenis_kelamin`, `phone`, `address`, `nickname`, `about`, `photo`, `university_id`, `created_at`, `updated_at`) VALUES
-(6, 95, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '087878719285', 'Bandung', NULL, NULL, NULL, 8, '2018-10-29 18:44:33', '2018-10-29 19:13:31');
+(6, 95, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '087878719285', 'Bandung', NULL, NULL, NULL, 8, '2018-10-29 18:44:33', '2018-10-29 19:13:31'),
+(9, 101, 'Basrul', 'Yandri', NULL, NULL, NULL, 'islam', 'L', '8121119095', 'depok', NULL, NULL, NULL, 11, '2018-10-30 17:51:09', '2018-10-30 17:51:09');
 
 -- --------------------------------------------------------
 
@@ -90820,19 +90825,19 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `universities`
 --
 ALTER TABLE `universities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `user_profiles`
 --
 ALTER TABLE `user_profiles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

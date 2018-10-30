@@ -30,10 +30,7 @@ Route::get('mail', function(){
 
 Route::group(['middleware' => 'app'],function(){
 
-	Route::get('/test',function(){
-
-		dd(aplikanHistories(\App\Aplikan::find(2)));
-	});
+	
 	Route::get('/', [
 			'uses' => 'PagesController@index',
 			'as' => 'page.index',
@@ -374,11 +371,6 @@ Route::group(['middleware' => 'app'],function(){
 		'uses' => 'DashboardController@cariWilayah',
 		'as' => 'search.wilayah',
 	]);
-
-	Route::get('downloadfileexcelimportaplikan', [
-			'uses' => 'AplikanController@downloadfileexcelimportaplikan',
-			'as' => 'download.contoh.file.import.aplikan',
-		]);
 
 	Route::get('galleries', [
 			'uses' => 'PagesController@galleries',

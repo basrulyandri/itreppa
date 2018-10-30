@@ -4,7 +4,7 @@
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
-        <h2>{{$anggota->name}}</h2>
+        <h2>{{$anggota->profile->first_name}} {{$anggota->profile->last_name}}</h2>
          <ol class="breadcrumb">
             <li>
                 <a href="{{route('anggota.index')}}">Anggota</a>
