@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2018 at 08:41 PM
+-- Generation Time: Oct 30, 2018 at 02:00 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -7451,7 +7451,7 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (32, 'theme_option_address', 'Menara YARSI Kav. 13 Lt. 1\r\nJl. Letjen. Suprapto, Cempaka Putih Timur', '2018-10-23 19:11:12', '2018-10-24 02:25:30'),
 (33, 'theme_option_about', 'Mengembangkan serta meningkatkan kemampuan anggota sebagai badan penyelenggara perguruan tinggi Indonesia untuk menyiapkan pelaksanaan kegiatan Tridharma Perguruan Tinggi, dalam rangka menghasilkan peserta didik menjadi manusia Indonesia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, professional, berwawasan kebangsaan, berkepribadian Pancasila serta berdayasaing global.', '2018-10-23 19:23:33', '2018-10-24 02:25:30'),
 (34, 'theme_option_slider_1_image', '/photos/apperti-image.jpg', '2018-10-23 20:18:54', '2018-10-24 03:20:58'),
-(35, 'theme_option_slider_1_title', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
+(35, 'theme_option_slider_1_title', 'Test', '2018-10-23 20:18:54', '2018-10-30 19:03:10'),
 (36, 'theme_option_slider_1_subtitle', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
 (37, 'theme_option_slider_1_button_text', '', '2018-10-23 20:18:54', '2018-10-24 03:18:54'),
 (38, 'theme_option_slider_1_button_link', '', '2018-10-23 20:18:54', '2018-10-24 03:19:42'),
@@ -7460,7 +7460,12 @@ INSERT INTO `options` (`id`, `option_key`, `option_value`, `created_at`, `update
 (41, 'theme_option_slider_2_title', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
 (42, 'theme_option_slider_2_subtitle', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
 (43, 'theme_option_slider_2_button_text', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
-(44, 'theme_option_slider_2_button_link', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17');
+(44, 'theme_option_slider_2_button_link', '', '2018-10-23 20:48:17', '2018-10-24 03:48:17'),
+(45, 'theme_option_slider_3_image', '', '2018-10-30 12:03:10', '2018-10-30 19:03:10'),
+(46, 'theme_option_slider_3_title', '', '2018-10-30 12:03:10', '2018-10-30 19:03:10'),
+(47, 'theme_option_slider_3_subtitle', '', '2018-10-30 12:03:10', '2018-10-30 19:03:10'),
+(48, 'theme_option_slider_3_button_text', '', '2018-10-30 12:03:10', '2018-10-30 19:03:10'),
+(49, 'theme_option_slider_3_button_link', '', '2018-10-30 12:03:10', '2018-10-30 19:03:10');
 
 --
 -- Triggers `options`
@@ -90773,7 +90778,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `permissions`
