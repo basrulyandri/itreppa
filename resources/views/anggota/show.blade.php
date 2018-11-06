@@ -1,5 +1,7 @@
 @extends('layouts.backend.master')
-
+@section('title')
+Detail Anggota
+@stop
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -61,12 +63,22 @@
                     <tr>                        
                         <td class="text-right">Nama Yayasan :</td>
                         <td>{{$anggota->profile->university->yayasan_name}}</td>
+                    </tr> 
+
+                    <tr>                        
+                        <td class="text-right">Jabtan di Yayasan :</td>
+                        <td>{{$anggota->profile->jabatan_di_yayasan}}</td>
                     </tr>              
                     
                     <tr>                        
                         <td class="text-right">Nama Perguruan Tinggi :</td>
                         <td>{{$anggota->profile->university->name}}</td>
                     </tr>
+                    <tr>                        
+                        <td class="text-right">Nama Rektor :</td>
+                        <td>{{$anggota->profile->university->rektor_name}}</td>
+                    </tr>
+
                     <tr>                        
                         <td class="text-right">Telpon :</td>
                         <td>{{$anggota->profile->university->phone}}</td>

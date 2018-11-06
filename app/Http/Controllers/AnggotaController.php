@@ -45,7 +45,8 @@ class AnggotaController extends Controller
             'phone' => $request->phone,
             'agama' => $request->agama,
             'address' => $request->address,
-            'university_id' => $university->id          
+            'university_id' => $university->id,
+            'jabatan_di_yayasan' => $request->jabatan_di_yayasan         
         ]);
 
         return redirect()->route('anggota.index')->with('success','Data anggota berhasil ditambahkan');

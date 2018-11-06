@@ -123,6 +123,16 @@
 								    @endif
 								  </div>
 								</div>
+
+								<div class='form-group{{$errors->has('jabatan_di_yayasan') ? ' has-error' : ''}}'>
+								  {!!Form::label('jabatan_di_yayasan','Jabatan di Yayasan',['class' => 'col-sm-4 control-label'])!!}
+								  <div class="col-sm-8">
+								    {!!Form::text('jabatan_di_yayasan',old('jabatan_di_yayasan'),['class' => 'form-control','placeholder' => 'Jabatan'])!!}
+								    @if($errors->has('jabatan_di_yayasan'))
+								      <span class="help-block">{{$errors->first('jabatan_di_yayasan')}}</span>
+								    @endif
+								  </div>
+								</div>
 	                			<div class='form-group{{$errors->has('university_name') ? ' has-error' : ''}}'>
 	                			  {!!Form::label('university_name','Nama Perguruan Tinggi',['class' => 'col-sm-4 control-label'])!!}
 	                			  <div class="col-sm-8">

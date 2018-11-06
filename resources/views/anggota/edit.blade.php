@@ -1,5 +1,7 @@
 @extends('layouts.backend.master')
-
+@section('title')
+Edit Anggota
+@stop
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -104,15 +106,75 @@
             <h5>Edit data Yayasan dan Perguruan tinggi</h5>          
         </div>
         <div class="ibox-content form-horizontal">        
-          <div class='form-group{{$errors->has('university_id') ? ' has-error' : ''}}'>
-            {!!Form::label('university_id','Perguruan tinggi',['class' => 'col-sm-2 control-label'])!!}
-            <div class="col-sm-10">
-              {!!Form::select('university_id',\App\University::pluck('name','id'),$anggota->profile->university_id,['class' => 'form-control'])!!}
-              @if($errors->has('university_id'))
-                <span class="help-block">{{$errors->first('university_id')}}</span>
-              @endif
+          <div class='form-group{{$errors->has('yayasan_name') ? ' has-error' : ''}}'>
+                {!!Form::label('yayasan_name','Nama Yayasan',['class' => 'col-sm-2 control-label'])!!}
+                <div class="col-sm-10">
+                  {!!Form::text('yayasan_name',$anggota->profile->university->yayasan_name,['class' => 'form-control','placeholder' => 'Nama Yayasan','required' => 'true'])!!}
+                  @if($errors->has('yayasan_name'))
+                    <span class="help-block">{{$errors->first('yayasan_name')}}</span>
+                  @endif
+                </div>
+              </div>
+
+              <div class='form-group{{$errors->has('jabatan_di_yayasan') ? ' has-error' : ''}}'>
+                {!!Form::label('jabatan_di_yayasan','Jabatan di Yayasan',['class' => 'col-sm-2 control-label'])!!}
+                <div class="col-sm-10">
+                  {!!Form::text('jabatan_di_yayasan',$anggota->profile->jabatan_di_yayasan,['class' => 'form-control','placeholder' => 'Jabatan di Yayasan'])!!}
+                  @if($errors->has('jabatan_di_yayasan'))
+                    <span class="help-block">{{$errors->first('jabatan_di_yayasan')}}</span>
+                  @endif
+                </div>
+              </div>
+
+              <div class='form-group{{$errors->has('university_name') ? ' has-error' : ''}}'>
+               {!!Form::label('university_name','Nama Perguruan Tinggi',['class' => 'col-sm-2 control-label'])!!}
+               <div class="col-sm-10">
+                 {!!Form::text('university_name',$anggota->profile->university->name,['class' => 'form-control','placeholder' => 'Nama Perguruan Tinggi','required' => 'true'])!!}
+                 @if($errors->has('university_name'))
+                 <span class="help-block">{{$errors->first('university_name')}}</span>
+                 @endif
+               </div>
+             </div>
+
+             <div class='form-group{{$errors->has('rektor_name') ? ' has-error' : ''}}'>
+              {!!Form::label('rektor_name','Nama Rektor',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+                {!!Form::text('rektor_name',$anggota->profile->university->rektor_name,['class' => 'form-control','placeholder' => 'Nama Rektor','required' => 'true'])!!}
+                @if($errors->has('rektor_name'))
+                <span class="help-block">{{$errors->first('rektor_name')}}</span>
+                @endif
+              </div>
+            </div>                     
+
+            <div class='form-group{{$errors->has('university_phone') ? ' has-error' : ''}}'>
+              {!!Form::label('university_phone','Telpon',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+                {!!Form::text('university_phone',$anggota->profile->university->phone,['class' => 'form-control','placeholder' => 'Telpon','required' => 'true'])!!}
+                @if($errors->has('university_phone'))
+                <span class="help-block">{{$errors->first('university_phone')}}</span>
+                @endif
+              </div>
             </div>
-          </div>      
+
+            <div class='form-group{{$errors->has('website_url') ? ' has-error' : ''}}'>
+              {!!Form::label('website_url','Website',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+                {!!Form::text('website_url',$anggota->profile->university->website_url,['class' => 'form-control','placeholder' => 'Website'])!!}
+                @if($errors->has('website_url'))
+                  <span class="help-block">{{$errors->first('website_url')}}</span>
+                @endif
+              </div>
+            </div>
+
+            <div class='form-group{{$errors->has('university_address') ? ' has-error' : ''}}'>
+              {!!Form::label('university_address','Alamat Perguruan Tinggi',['class' => 'col-sm-2 control-label'])!!}
+              <div class="col-sm-10">
+                {!!Form::textarea('university_address',$anggota->profile->university->address,['class' => 'form-control','placeholder' => 'Alamat Perguruan Tinggi'])!!}
+                @if($errors->has('university_address'))
+                <span class="help-block">{{$errors->first('university_address')}}</span>
+                @endif
+              </div>
+            </div>      
                 <input type="submit" class="btn btn-primary" value="Update">
               {!!Form::close()!!}          
         </div>

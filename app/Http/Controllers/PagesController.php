@@ -117,11 +117,12 @@ class PagesController extends Controller
 		$user->profile()->create([
 			'first_name' => $request->first_name,
 			'last_name' => $request->last_name,
-			'jenis_kelamin' => $request->jenis_kelamin,
+			'jenis_kelamin' => $request->jenis_kelamin,			
 			'phone' => $request->phone,
 			'agama' => $request->agama,
 			'address' => $request->address,
-			'university_id' => $university->id			
+			'university_id' => $university->id,
+			'jabatan_di_yayasan' => $request->jabatan_di_yayasan		
 		]);
 		\Mail::to($user->email)->send(new UserRegistered($user));
 		\Mail::to(getOption('theme_option_email'))->send(new UserRegisteredNotificatioToAdmin($user));

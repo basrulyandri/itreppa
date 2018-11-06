@@ -1,5 +1,7 @@
 @extends('layouts.backend.master')
-
+@section('title')
+Add Anggota
+@stop
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -110,6 +112,16 @@
                   {!!Form::text('yayasan_name',old('yayasan_name'),['class' => 'form-control','placeholder' => 'Nama Yayasan','required' => 'true'])!!}
                   @if($errors->has('yayasan_name'))
                     <span class="help-block">{{$errors->first('yayasan_name')}}</span>
+                  @endif
+                </div>
+              </div>
+
+              <div class='form-group{{$errors->has('jabatan_di_yayasan') ? ' has-error' : ''}}'>
+                {!!Form::label('jabatan_di_yayasan','Jabatan di Yayasan',['class' => 'col-sm-2 control-label'])!!}
+                <div class="col-sm-10">
+                  {!!Form::text('jabatan_di_yayasan',old('jabatan_di_yayasan'),['class' => 'form-control','placeholder' => 'Jabatan di Yayasan'])!!}
+                  @if($errors->has('jabatan_di_yayasan'))
+                    <span class="help-block">{{$errors->first('jabatan_di_yayasan')}}</span>
                   @endif
                 </div>
               </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2018 at 07:05 PM
+-- Generation Time: Nov 06, 2018 at 04:14 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -8343,16 +8343,6 @@ CREATE TABLE `universities` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `universities`
---
-
-INSERT INTO `universities` (`id`, `name`, `yayasan_name`, `rektor_name`, `phone`, `website_url`, `address`, `created_at`, `updated_at`) VALUES
-(8, 'STIKES IMC Bintaro', 'Gala Indonesia', 'Peter simanjuntak', '87878719285', 'stikesimcbintaro.com', 'Bintaro', '2018-10-29 18:44:33', '2018-10-30 01:44:33'),
-(9, '098743284', 'sjdfns', 'fdsfn', NULL, NULL, 'sndjfs', '2018-10-30 17:46:02', '2018-10-31 00:46:02'),
-(10, 'lkjhgisd', 'sgfkjhklfs', 'kjdghdj', 'djfhgjd', NULL, 'dfjgdhgkjd', '2018-10-30 17:48:51', '2018-10-31 00:48:51'),
-(11, 'Ganesha', 'Ganesha', 'ganesah', '092648247', 'hjasdad.com', 'jasfhskdfsbfs', '2018-10-30 17:51:09', '2018-10-31 00:51:09');
-
 -- --------------------------------------------------------
 
 --
@@ -8381,9 +8371,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `activated`, `activation_code`, `activated_at`, `last_login`, `reset_password_code`, `remember_token`, `api_token`, `created_at`, `updated_at`) VALUES
-(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25'),
-(95, 3, 'basrul', 'rolloic@gmail.com', '$2y$10$Ueg3alCDCtOYFU.hMdXLPuK.T88JN8C9jG3MR0RJpEXcxu6SP6HUO', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-29 18:44:33', '2018-10-30 01:44:33'),
-(101, 3, 'basrul2', 'akjgsdfa@gmail.com', '$2y$10$drEhlZ0fh.4D76a0Axpj3.1ySwaPyPP3/yCI4w5Uc6XgtbZ1JsOxy', 1, NULL, NULL, NULL, NULL, NULL, NULL, '2018-10-30 17:51:09', '2018-10-31 00:51:09');
+(85, 2, 'admin', 'digicrea08@gmail.com', '$2y$10$sCzfduh2H1uDhwoW9u.aTumba6VOP67kW.13r0AIjHNSZ20Mgst2G', 1, NULL, NULL, NULL, 'DyIU8daVDV79KYftqqLVWpgXMFtbL2ww', 'MIkv8sUgurUOS4Xqyv32oiV1Avb91TuppkordKcVJ2z6WiBfDBAiE7s8PbPU', '', '2016-11-28 01:29:35', '2018-10-01 22:45:25');
 
 --
 -- Triggers `users`
@@ -8415,17 +8403,10 @@ CREATE TABLE `user_profiles` (
   `about` text COLLATE utf8mb4_unicode_ci,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `university_id` int(11) DEFAULT NULL,
+  `jabatan_di_yayasan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user_profiles`
---
-
-INSERT INTO `user_profiles` (`id`, `user_id`, `first_name`, `last_name`, `facebook_url`, `twitter_url`, `linkedin_url`, `agama`, `jenis_kelamin`, `phone`, `address`, `nickname`, `about`, `photo`, `university_id`, `created_at`, `updated_at`) VALUES
-(6, 95, 'Basrul', 'Yandri', NULL, NULL, NULL, 'Islam', 'L', '087878719285', 'Bandung', NULL, NULL, NULL, 8, '2018-10-29 18:44:33', '2018-10-29 19:13:31'),
-(9, 101, 'Basrul', 'Yandri', NULL, NULL, NULL, 'islam', 'L', '8121119095', 'depok', NULL, NULL, NULL, 11, '2018-10-30 17:51:09', '2018-10-30 17:51:09');
 
 -- --------------------------------------------------------
 
@@ -90825,19 +90806,19 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `universities`
 --
 ALTER TABLE `universities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `user_profiles`
 --
 ALTER TABLE `user_profiles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
