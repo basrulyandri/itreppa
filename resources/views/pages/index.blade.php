@@ -7,7 +7,7 @@
     <meta property="og:type" content="website" /> 
     <meta property="og:title" content="{{getOption('site_name')}}" />
     <meta property="og:description" content="{{getOption('site_description')}}" />
-    <meta property="og:image" content="{{asset('/photos/apperti-image.jpg')}}" />
+    <meta property="og:image" content="{{asset('/photos/apperti-logo-facebook.jpg')}}" />
     <meta property="title" content="{{getOption('site_name')}}" />
     <meta name="description" content="{{getOption('site_description')}}" />
 @stop
